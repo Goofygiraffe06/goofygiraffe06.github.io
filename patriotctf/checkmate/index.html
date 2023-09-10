@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.0.747651865636">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.4.0.747652548015">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.4.0">
@@ -21,21 +21,23 @@
     <meta property="og:url" content="https://goofygiraffe06.github.io/patriotctf/checkmate/">
     <meta property="og:title" content="Checkmate [Medium]">
     <meta property="og:description" content="Get your adrenaline pumping as you navigate the thrilling world of Crypto Web in Capture the Flag.">
+    <meta property="og:image" content="https://media.discordapp.net/attachments/921629084419780629/1150357935365570571/Screenshot_20230910_122039.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://goofygiraffe06.github.io/patriotctf/checkmate/">
     <meta property="twitter:title" content="Checkmate [Medium]">
     <meta property="twitter:description" content="Get your adrenaline pumping as you navigate the thrilling world of Crypto Web in Capture the Flag.">
+    <meta property="twitter:image" content="https://media.discordapp.net/attachments/921629084419780629/1150357935365570571/Screenshot_20230910_122039.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.4.0.747651865636" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.4.0.747652548015" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.0.747651865636" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.4.0.747652548015" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.0.747651865636" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.0.747651865636" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.4.0.747652548015" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.4.0.747652548015" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -266,6 +268,11 @@ for pwd in valid_passwords:
 </doc-codeblock></div>
 <p>Save the results into a file using the <code v-pre>tee</code> command, like so: <code v-pre>python3 brute.py | tee pass.txt</code>. Since outputting the password after finding it might slow down the brute-forcer, the script simply adds them to the list and prints them after processing all possible combinations. The entire process takes around 2-3 minutes, although this might vary based on your CPU.</p>
 <p>Upon navigating to <code v-pre>/check.php</code>, we encounter password verification again. Time to brute-force using the passwords from our previous script.</p>
+<p><figure class="content-center">
+    <img src="https://media.discordapp.net/attachments/921629084419780629/1150357935365570571/Screenshot_20230910_122039.png" alt="Directory to test password">
+    <figcaption class="caption">Directory to test password</figcaption>
+</figure>
+</p>
 <doc-anchor-target id="building-bruteforcer-2">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#building-bruteforcer-2">#</doc-anchor-trigger>
@@ -310,6 +317,7 @@ for thread in threads:
 </doc-codeblock></div>
 <p>After some time, the script will identify the correct</p>
 <p>password. Entering it on the website will finally unveil the flag!</p>
+<p><img src="https://media.discordapp.net/attachments/1147859325122003024/1149901251560079442/image.png?width=1025&amp;height=310" alt="Picture Showing Final Flag" /></p>
 <p>WHOA! THIS WAS A REALLY GOOD CHALLENGE!</p>
 
                                 
