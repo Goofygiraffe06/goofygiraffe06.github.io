@@ -111,6 +111,8 @@ Save the results into a file using the `tee` command, like so: `python3 brute.py
 
 Upon navigating to `/check.php`, we encounter password verification again. Time to brute-force using the passwords from our previous script.
 
+![Directory to test password](https://media.discordapp.net/attachments/921629084419780629/1150357935365570571/Screenshot_20230910_122039.png)
+
 ## Building Bruteforcer 2
 
 The correct password needs to be posted to /check.php. If an incorrect password is entered, the website outputs "incorrect password", which can be used to find the correct flag. Recall saving your passwords in a file? It's time to put them to use.
@@ -154,5 +156,7 @@ for thread in threads:
 After some time, the script will identify the correct
 
  password. Entering it on the website will finally unveil the flag!
+
+ ![Picture Showing Final Flag](https://media.discordapp.net/attachments/1147859325122003024/1149901251560079442/image.png?width=1025&height=310)
 
 WHOA! THIS WAS A REALLY GOOD CHALLENGE!
