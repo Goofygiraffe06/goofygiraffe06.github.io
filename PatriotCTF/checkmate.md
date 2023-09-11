@@ -1,16 +1,9 @@
 ---
-layout: post
 title:  "Checkmate [Medium]"
 date:   2023-09-10
 categories: CTF Writeups
 ---
 
-
----
-
-# Checkmate [Medium]
-
-----
 ## Challenge Description 
 
 Get your adrenaline pumping as you navigate the thrilling world of Crypto Web in Capture the Flag.
