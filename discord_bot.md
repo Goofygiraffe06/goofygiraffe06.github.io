@@ -1,6 +1,6 @@
 ---
 title: "Running Discord Bots 24/7 for Free with Replit and Uptime Robot"
-date: 2023-09-17
+date: 2023-09-24
 categories: Discord, Programming, Cloud
 ---
 
