@@ -1,7 +1,7 @@
 ---
 title: "Running Discord Bots 24/7 for Free with Replit and Uptime Robot"
 date: 2023-09-24
-categories: Discord, Programming, Cloud
+categories: Cloud
 ---
 
 Have you ever wanted to keep your Discord bot running all the time without breaking the bank? In today's guide, we'll walk you through a straightforward process using Replit and Uptime Robot. These tools won't cost you a dime and come with the added bonus of a neat dashboard to monitor things.
@@ -87,7 +87,7 @@ This setup ensures that the bot's server remains active, allowing Uptime Robot t
 
 [Replit](https://replit.com/) is an online IDE that supports various programming languages, including Python. For our purposes, it's a free platform where our bot can reside and run. 
 
-[Insert Image of Replit Homepage]
+![replit banner](https://cdn.discordapp.com/attachments/1150795094488793230/1155481902556397721/ogBanner.png)
 
 - Sign up or log in to Replit.
 - Click on the `+` sign to create a new Repl and select `Python`.
@@ -100,8 +100,7 @@ Now, your bot is running on Replit!
 
 [Uptime Robot](https://uptimerobot.com/) is like a virtual guard. It will periodically check if your bot's server (set up by `keep_alive.py`) is active. If it's down, Uptime Robot will send a request to wake it up.
 
-[Insert Image of Uptime Robot Dashboard]
-
+![UptimeRobot Dashboard](https://cdn.discordapp.com/attachments/1150795094488793230/1155482557496959016/uptime-robot-dashboard.png)
 Steps:
 
 >- Head to Uptime Robot and create an account.
