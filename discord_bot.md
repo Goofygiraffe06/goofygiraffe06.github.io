@@ -2,6 +2,7 @@
 title: "Running Discord Bots 24/7 for Free with Replit and Uptime Robot"
 date: 2023-09-24
 categories: Cloud
+author: Rahul N.
 ---
 
 Have you ever wanted to keep your Discord bot running all the time without breaking the bank? In today's guide, we'll walk you through a straightforward process using Replit and Uptime Robot. These tools won't cost you a dime and come with the added bonus of a neat dashboard to monitor things.

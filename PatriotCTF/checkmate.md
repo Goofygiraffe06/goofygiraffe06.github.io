@@ -2,6 +2,7 @@
 title:  "Checkmate [Medium]"
 date:   2023-09-10
 categories: CTF Writeups
+author: Rahul N.
 ---
 
 ## Challenge Description 
