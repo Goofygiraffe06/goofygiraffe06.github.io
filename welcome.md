@@ -6,6 +6,8 @@ I created this blog to document and share my notes, write-ups, and experiences. 
 
 And if there's one thing I've come to realize, it's this:
 
-    "You don't truly understand something until you've broken it... and then put it back together."
+!!!
+"You don't truly understand something until you've broken it... and then put it back together."
+!!!
 
 I hope my posts offer both information and a touch of humor. Thanks for stopping by!
