@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750603237826">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>4.1 Understand Computer Networking</title>
+    <meta name="title" content="4.1 Understand Computer Networking">
+    <meta name="description" content="Networking is the process of connecting two or more computers to share data, information, or resources securely.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.1-understand-computer-networking/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.1-understand-computer-networking/">
+    <meta property="og:title" content="4.1 Understand Computer Networking">
+    <meta property="og:description" content="Networking is the process of connecting two or more computers to share data, information, or resources securely.">
+    <meta property="og:image" content="https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_04/assets/EDU-ELCC-70245a-Network_Diagram-techart-v06.svg?_&d2lSessionVal=ozx81ESzeaV1TVvZ5FMZKSSIZ&ou=9541">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.1-understand-computer-networking/">
+    <meta property="twitter:title" content="4.1 Understand Computer Networking">
+    <meta property="twitter:description" content="Networking is the process of connecting two or more computers to share data, information, or resources securely.">
+    <meta property="twitter:image" content="https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_04/assets/EDU-ELCC-70245a-Network_Diagram-techart-v06.svg?_&d2lSessionVal=ozx81ESzeaV1TVvZ5FMZKSSIZ&ou=9541">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="41-understand-computer-networking" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-understand-computer-networking">#</doc-anchor-trigger>
+        <span>4.1 Understand Computer Networking</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="networking">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#networking">#</doc-anchor-trigger>
+        <span>Networking</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Networking is the process of connecting two or more computers to share data, information, or resources securely.</li>
+<li>Networks involve various technologies, including hardware, software, protocols, and encryption, which enable computer communications.</li>
+</ul>
+<doc-anchor-target id="types-of-networks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#types-of-networks">#</doc-anchor-trigger>
+        <span>Types of Networks</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>There are two main types of networks: Local Area Network (LAN) and Wide Area Network (WAN).</li>
+<li>LAN covers a limited geographical area, typically within a single floor or building.</li>
+<li>WAN, on the other hand, refers to long-distance connections between geographically remote networks.</li>
+</ul>
+<doc-anchor-target id="network-devices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-devices">#</doc-anchor-trigger>
+        <span>Network Devices</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="hubs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hubs">#</doc-anchor-trigger>
+        <span>Hubs</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Hubs are networking devices used to connect multiple devices in a network.</li>
+<li>They are less common in business or corporate networks and are more commonly found in home networks.</li>
+<li>Hubs are wired devices and are considered less intelligent compared to switches or routers.</li>
+</ul>
+<doc-anchor-target id="switch">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#switch">#</doc-anchor-trigger>
+        <span>Switch</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Switches, also known as intelligent hubs, are an alternative to hubs for connecting multiple devices in a network.</li>
+<li>Unlike hubs, switches are wired devices that have knowledge of the addresses of connected devices, allowing them to route traffic directly to the intended port/device instead of broadcasting to all devices.</li>
+<li>Switches offer greater efficiency in traffic delivery and improve overall data throughput compared to hubs.</li>
+<li>Although switches are smarter than hubs, they are not as intelligent as routers.</li>
+<li>Switches can also create separate broadcast domains when used to create Virtual LANs (VLANs), a topic that will be discussed later.</li>
+</ul>
+<doc-anchor-target id="routers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#routers">#</doc-anchor-trigger>
+        <span>Routers</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Routers are essentied to the frames, creating packets with destination addreal devices used to control traffic flow on networks and connect different networks, enabling efficient data transfer between them.</li>
+<li>They can be both wired and wireless, providing flexibility in network connectivity options.</li>
+<li>Routers are smarter than hubs and switches because they have the ability to determine the most efficient path or &quot;route&quot; for traffic to flow across the network.</li>
+<li>By analyzing network addresses and using routing protocols, routers ensure data reaches its intended destination using the most optimal path.</li>
+<li>Routers are crucial for directing data packets across large networks or the internet, allowing data to traverse multiple networks to reach its final destination.</li>
+</ul>
+<doc-anchor-target id="firewalls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#firewalls">#</doc-anchor-trigger>
+        <span>Firewalls</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Firewalls are critical tools for managing and controlling network traffic, playing a key role in network security.</li>
+<li>A firewall is a network device designed to filter and monitor incoming and outgoing traffic between a private network (e.g., an organization&#x27;s internal network) and the internet, or even between different segmented networks within an organization.</li>
+<li>The primary function of a firewall is to enforce a set of predefined rules, filters, or access control lists that determine which network packets are allowed to pass through and which are blocked.</li>
+<li>By analyzing the source and destination addresses, ports, and protocols of network packets, the firewall can make decisions on whether to permit or deny the traffic based on the established rules.</li>
+<li>Firewalls are crucial in protecting networks from unauthorized access, malware, and other potential security threats by acting as a barrier between trusted and untrusted networks.</li>
+</ul>
+<doc-anchor-target id="server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#server">#</doc-anchor-trigger>
+        <span>Server</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Servers are specialized computers providing services to other computers on a network.</li>
+<li>Types of servers: web, email, print, database, and file servers.</li>
+<li>Servers are networked devices interacted with by clients.</li>
+<li>Servers have strict security measures due to sensitive data.</li>
+<li>Security measures include access controls, updates, firewalls, encryption, and monitoring.</li>
+<li>Proper server security is crucial for safeguarding data and ensuring resource availability.</li>
+</ul>
+<doc-anchor-target id="endpoints">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints">#</doc-anchor-trigger>
+        <span>Endpoints</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Endpoints are the ends of a network communication link.</li>
+<li>One end is often at a server where a resource resides.</li>
+<li>The other end is often a client making a request to use a network resource.</li>
+<li>Endpoints can be servers, desktop workstations, laptops, tablets, mobile phones, or any other user device.</li>
+</ul>
+<doc-anchor-target id="ethernet">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ethernet">#</doc-anchor-trigger>
+        <span>Ethernet</span>
+    </h3>
+</doc-anchor-target>
+<p>Ethernet (IEEE 802.3) is a standard that defines wired connections of networked devices. This standard defines the way data is formatted over the wire to ensure disparate devices can communicate over the same cables.</p>
+<doc-anchor-target id="device-addresses">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#device-addresses">#</doc-anchor-trigger>
+        <span>Device Addresses</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Media Access Control</strong> <strong>(MAC)</strong>-  Every network device is assigned a Media Access Control (MAC) address. An example is <code v-pre>00-13-02-1F-58-F5</code>. The first 3 bytes of the address denote the vendor or manufacturer of the physical network interface.</li>
+<li><strong>Internet Protocol (IP) Address</strong> - This logical IP address represents the network interface within the network and can be useful to maintain communications when a physical device is swapped with new hardware. Examples are 192.168.1.1 (IPv4) and 2001:db8::ffff:0:1. (IPv6).</li>
+</ul>
+<doc-anchor-target id="network-diagram-of-a-soho-small-office-home-office-network">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-diagram-of-a-soho-small-office-home-office-network">#</doc-anchor-trigger>
+        <span>Network Diagram Of A SOHO (Small Office Home Office) Network</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_04/assets/EDU-ELCC-70245a-Network_Diagram-techart-v06.svg?_&amp;d2lSessionVal=ozx81ESzeaV1TVvZ5FMZKSSIZ&amp;ou=9541" alt="diagram representing a small business network" title="diagram representing a small business network">
+    <figcaption class="caption">diagram representing a small business network</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="network-diagram-of-a-home-network">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-diagram-of-a-home-network">#</doc-anchor-trigger>
+        <span>Network Diagram Of A Home Network</span>
+    </h2>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_04/assets/EDU-ELCC-70670-techart-Networking_at_Glance-v02.svg?_&amp;d2lSessionVal=ozx81ESzeaV1TVvZ5FMZKSSIZ&amp;ou=9541" alt="Networking at Glance">
+    <figcaption class="caption">Networking at Glance</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="networking-models">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#networking-models">#</doc-anchor-trigger>
+        <span>Networking Models</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Various models, architectures, and standards exist to connect hardware and software systems for sharing information and coordinating tasks. For Example OSI Model and TCP/IP Model.</li>
+<li>Computers and networks combine communication devices, storage devices, processing devices, security devices, input/output devices, operating systems, software, services, data, and people.</li>
+<li>To create secure and effective network systems, it&#x27;s essential to prioritize the exchange of information and ideas between people and organizations to accomplish tasks.</li>
+<li>Network and security objectives can be expressed as:
+<ul>
+<li>Providing reliable, managed communications between hosts and users.</li>
+<li>Implementing layered isolation of functions.</li>
+<li>Using packets for communication.</li>
+<li>Standardizing routing, addressing, and control.</li>
+<li>Allowing additional functionality from layers beyond inter networking.</li>
+<li>Being vendor-agnostic, scalable, and resilient.</li>
+</ul>
+</li>
+</ul>
+<p>A Network Model layers Can Be Simplified Into Two Prominent Layers:</p>
+<doc-anchor-target id="upper-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#upper-layer">#</doc-anchor-trigger>
+        <span>Upper Layer</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The upper layer, also called the host or application layer, manages connection integrity and controls communication sessions between computers.</li>
+<li>It handles the establishment, maintenance, and termination of communication sessions.</li>
+<li>The upper layer transforms data received from the Application Layer into a universal format for all systems to understand.</li>
+<li>It enables applications to communicate and checks if a remote communication partner is available and accessible.</li>
+</ul>
+<doc-anchor-target id="lower-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lower-layer">#</doc-anchor-trigger>
+        <span>Lower Layer</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The lower layer, also known as the media or transport layer, receives bits from the physical connection medium and converts them into frames.</li>
+<li>Frames are standardized groupings of data, similar to buckets containing water.</li>
+<li>Route data is added to the frames, creating packets with destination addresses.</li>
+<li>Once the data is organized into packets, the host layer takes over to manage further communication.</li>
+</ul>
+<doc-anchor-target id="open-systems-interconnection-osi-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#open-systems-interconnection-osi-model">#</doc-anchor-trigger>
+        <span>Open Systems Interconnection (OSI) Model</span>
+    </h2>
+</doc-anchor-target>
+<p>The OSI Model is a standardized framework used to describe the communication structure for interconnected computer systems. It provides a common way to understand how protocols function and interact in an ideal communication environment. The model is a conceptual reference and does not directly correspond to specific hardware or software implementations.</p>
+<p>The OSI Model consists of seven distinct layers, each responsible for specific tasks and functions that facilitate data exchange between two computers. These layers are often referred to by their names or layer numbers. For example, Layer 3 is known as the Network Layer.</p>
+<p><strong>The Seven Layers of the OSI Model:</strong></p>
+<ol>
+<li><p><strong>Physical Layer (Layer 1):</strong> This layer deals with the physical transmission of data over the network medium. It converts data into binary signals and transmits them over physical media, such as copper cables or fiber optics.</p>
+</li>
+<li><p><strong>Data Link Layer (Layer 2):</strong> The Data Link Layer is responsible for the reliable transmission of data frames between two devices directly connected on the same network segment. It provides error detection and correction and ensures proper flow control.</p>
+</li>
+<li><p><strong>Network Layer (Layer 3):</strong> The Network Layer handles the routing of data packets between different networks. It determines the best path for data transmission, taking into account factors like network topology, congestion, and addressing.</p>
+</li>
+<li><p><strong>Transport Layer (Layer 4):</strong> The Transport Layer ensures the reliable delivery of data between two endpoints. It breaks the data into smaller segments and manages flow control and error recovery. Notable protocols at this layer include TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).</p>
+</li>
+<li><p><strong>Session Layer (Layer 5):</strong> The Session Layer establishes, maintains, and terminates sessions (connections) between applications on different devices. It manages the communication channels, allowing data exchange between applications.</p>
+</li>
+<li><p><strong>Presentation Layer (Layer 6):</strong> The Presentation Layer is responsible for data translation and formatting. It converts data into a format that the application layer can understand and handles tasks like data encryption and compression.</p>
+</li>
+<li><p><strong>Application Layer (Layer 7):</strong> The Application Layer is the topmost layer and interacts directly with the end-user applications. It provides network services to applications, such as email, web browsing, and file transfer.</p>
+</li>
+</ol>
+<p><strong>Encapsulation and De-encapsulation:</strong></p>
+<p>As data travels down the OSI Model from the Application Layer to the Physical Layer, each layer adds its own header, payload, and possibly footer (trailer) to the data. This process is known as encapsulation. The payload of one layer becomes the data for the layer below it.</p>
+<p>When data travels up the OSI Model from the Physical Layer to the Application Layer, the layers remove their respective headers and footers through a process called de-encapsulation (or decapsulation). The data unit size decreases as it moves up the layers.</p>
+<p><strong>Examples of Networking Terminology Mapped to OSI Model:</strong></p>
+<ul>
+<li>Image files like JPEG or PNG are discussed in the Presentation Layer (Layer 6).</li>
+<li>Logical ports like FTP are associated with the Session Layer (Layer 5).</li>
+<li>TCP/UDP protocols are discussed in the Transport Layer (Layer 4).</li>
+<li>Routers sending packets relate to the Network Layer (Layer 3).</li>
+<li>Switches, bridges, or WAPs sending frames are related to the Data Link Layer (Layer 2).</li>
+</ul>
+<p><figure class="content-center">
+    <img src="https://i.stack.imgur.com/WG5r8.jpg" alt="OSI Model">
+    <figcaption class="caption">OSI Model</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="tcpip-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tcpip-model">#</doc-anchor-trigger>
+        <span>TCP/IP Model</span>
+    </h2>
+</doc-anchor-target>
+<p>Transmission Control Protocol/Internet Protocol (TCP/IP) is one of the most widely used protocol suites for networking and communication on the internet. It was built to replace the <strong>OSI Model</strong>.</p>
+<doc-anchor-target id="tcpip-protocol-architecture-layers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tcpip-protocol-architecture-layers">#</doc-anchor-trigger>
+        <span>TCP/IP Protocol Architecture Layers:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Application Layer: Defines the protocols used for communication between applications or software running on different devices.</li>
+<li>Transport Layer: Responsible for the reliable and orderly movement of data between devices. It ensures that data is delivered accurately and without errors.</li>
+<li>Internet Layer: Handles the addressing and routing of data packets across the network. It inserts the data packets into the appropriate paths for delivery.</li>
+<li>Network Interface Layer: This layer is concerned with how data physically moves through the network. It deals with hardware-level communication, such as sending and receiving data over network cables.</li>
+</ol>
+<p>TCP/IP can work on different operating systems and devices. However, this versatility comes with a drawback—TCP/IP can consume significant resources, and its original design prioritized ease of use over security, making it relatively susceptible to hacking attempts. Despite its security challenges, TCP/IP&#x27;s widespread adoption has made it a fundamental component of modern networking and internet communication.</p>
+<p><figure class="content-center">
+    <img src="https://learn.isc2.org/content/enforced/9541-CC-SPT-GLOBAL-1ED-1M/build/chapter_04/assets/EDU-ELCC-70520-techart-tcpip_protocol-v04.svg?_&amp;d2lSessionVal=ozx81ESzeaV1TVvZ5FMZKSSIZ&amp;ou=954" alt="TCP/IP Model">
+    <figcaption class="caption">TCP/IP Model</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="ipv4">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ipv4">#</doc-anchor-trigger>
+        <span>IPv4</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>IPv4 is one of the major versions of the Internet Protocol used worldwide.</li>
+<li>It provides a 32-bit address space, which was predicted to be exhausted by the late 1980 s due to the increasing number of devices connected to the internet.</li>
+<li>To address the limited address space, IPv4 was sub-divided into public and private address ranges.</li>
+<li>The private IPv4 address ranges available for anyone to use are:
+<ul>
+<li>10.0.0.0 to 10.255.255.254</li>
+<li>172.16.0.0 to 172.31.255.254</li>
+<li>192.168.0.0 to 192.168.255.254</li>
+</ul>
+</li>
+<li>IPv4 addresses are expressed as four octets separated by dots (e.g., 216.12.146.140), with each octet ranging from 0 to 255.</li>
+<li>An IPv4 address is divided into the network number and the host address.</li>
+<li>The network number is assigned by external organizations like ICANN and represents the organization&#x27;s network.</li>
+<li>The host address represents the network interface within the network.</li>
+<li>To facilitate network administration, networks are divided into subnets using subnet masks (e.g., 255.255.255.0).</li>
+<li>The subnet mask specifies the subnet portion of an address, allowing efficient address allocation.</li>
+<li>Private addressing in IPv4 enables local networks, like small office, home office (SOHO) situations, to reuse addresses without conflicts.</li>
+<li>One special IPv4 address is 127.0.0.1, known as the loop-back address, used for self-diagnosis and troubleshooting at the machine level.</li>
+</ul>
+<doc-anchor-target id="ipv6">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ipv6">#</doc-anchor-trigger>
+        <span>IPv6</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>IPv6 is a newer version of the Internet Protocol used for identifying devices on the internet.</li>
+<li>IPv6 addresses are much longer than the older IPv4 addresses, with 128 bits compared to 32 bits, allowing for a huge number of unique addresses.</li>
+<li>An IPv6 address is written as 8 groups of four characters, where each character can be any number from 0 to 9 or a letter from A to F. The groups are separated by colons.</li>
+<li>For example, an IPv6 address could look like this: <code v-pre>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>.</li>
+<li>To make long addresses easier to read, leading zeros in each group can be omitted, and consecutive groups of zeros can be replaced with double colons (<code v-pre>::</code>).</li>
+<li>For instance, the previous example could be shortened to: <code v-pre>2001:db8:85a3::8a2e:370:7334</code>.</li>
+<li>IPv6 addresses have special uses too, like <code v-pre>::1</code>, which is equivalent to <code v-pre>127.0.0.1</code> in IPv4 and is used for testing the network interface locally.</li>
+<li>Some ranges, such as <code v-pre>2001:db8::</code> to <code v-pre>2001:db8:ffff:ffff:ffff:ffff:ffff:ffff</code>, are reserved for documentation and examples to avoid conflicts with real-world addresses.</li>
+<li>There are also private address ranges (<code v-pre>fc00::</code> to <code v-pre>fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</code>) meant for internal network use that are not accessible from the public internet.</li>
+</ul>
+<p>IPv6 is a modernization of IPv4, which addressed a number of weaknesses in the IPv4 environment:</p>
+<ul>
+<li>A much larger address field: IPv6 addresses are 128 bits, which supports 2128 or 340,282,366,920,938,463,463,374,607,431,768,211,456 hosts. This ensures that we will not run out of addresses.</li>
+<li>Improved security: IPsec is an optional part of IPv4 networks, but a mandatory component of IPv6 networks. This will help ensure the integrity and confidentiality of IP packets and allow communicating partners to authenticate with each other.</li>
+<li>Improved quality of service (QoS): This will help services obtain an appropriate share of a network’s bandwidth.</li>
+</ul>
+<doc-anchor-target id="wifi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wifi">#</doc-anchor-trigger>
+        <span>WiFi</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Wireless networking is popular for connecting corporate and home systems due to easy deployment and cost-effectiveness.</li>
+<li>It offers greater versatility as workstations and portable devices can move freely within the signal range of wireless access points.</li>
+<li>However, this freedom comes with additional security vulnerabilities.</li>
+<li>Wi-Fi range is generally adequate for most homes or small offices, but range extenders can be used to expand coverage for larger areas.</li>
+<li>Wi-Fi standards have evolved over time, with each version offering faster performance.</li>
+<li>In a LAN, wired network intrusions require physical access to the network media, while wireless media intrusions can occur at a distance, potentially making them more susceptible to unauthorized access.</li>
+</ul>
+<doc-anchor-target id="security-of-the-network">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-of-the-network">#</doc-anchor-trigger>
+        <span>Security Of The Network</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Improperly Implemented TCP/IP Stacks:</strong> Various operating systems with poorly implemented TCP/IP stacks are susceptible to different types of attacks, including DoS/DDoS attacks, fragment attacks, oversized packet attacks, spoofing attacks, and man-in-the-middle attacks.</li>
+<li><strong>DoS/DDoS Attacks:</strong> TCP/IP vulnerabilities can be exploited for Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks, where attackers flood the target system with a massive volume of traffic, overwhelming its resources and causing service disruptions.</li>
+<li><strong>Fragment Attacks:</strong> Attackers can manipulate IP packet fragments to confuse or overload the target system, leading to potential security breaches.</li>
+<li><strong>Oversized Packet Attacks:</strong> Sending abnormally large packets to the target can exploit vulnerabilities in the TCP/IP stack, causing it to crash or behave unexpectedly.</li>
+<li><strong>Spoofing Attacks:</strong> TCP/IP is susceptible to spoofing attacks, where attackers forge the source IP address to appear as a trusted entity, enabling them to bypass security measures and gain unauthorized access.</li>
+<li><strong>Man-in-the-Middle Attacks:</strong> In a man-in-the-middle attack, an attacker intercepts and potentially alters communication between two parties, gaining access to sensitive data.</li>
+<li><strong>Passive Attacks via Monitoring or Sniffing:</strong> TCP/IP, like most protocols, is susceptible to passive attacks through network monitoring or sniffing. Attackers can capture and analyze network traffic to gather information about the network, including sensitive data.</li>
+</ul>
+<doc-anchor-target id="412-ports">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#412-ports">#</doc-anchor-trigger>
+        <span>4.1.2 Ports</span>
+    </h1>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Physical Ports</strong>: Physical ports are the ports on the routers, switches, servers, computers, etc. that you connect the wires, e.g., fiber optic cables, Cat5 cables, etc., to create a network.</p>
+</li>
+<li><p><strong>Logical Ports</strong>:</p>
+<ul>
+<li>A logical port is also known as a socket.</li>
+<li>Its a number that both the subject and object agree upon to communicate.</li>
+<li>They enable a single IP address to e multiple simultaneous communications using different port numbers.</li>
+</ul>
+<p>There are three categories of ports based on their numbering:</p>
+<ol>
+<li><p><strong>Well-known ports (0–1023):</strong> These ports are associated with common protocols at the core of the TCP/IP model, such as Domain Name Service (DNS) and Simple Mail Transfer Protocol (SMTP).</p>
+</li>
+<li><p><strong>Registered ports (1024–49151):</strong> These ports are usually linked to proprietary applications from vendors and developers. While officially approved by the Internet Assigned Numbers Authority (IANA), some vendors choose ports at their discretion. Examples include Remote Authentication Dial-In User Service (RADIUS) authentication, Microsoft SQL Server, and the Docker REST API.</p>
+</li>
+<li><p><strong>Dynamic or private ports (49152–65535):</strong> When services associated with well-known or registered ports are requested, they respond with dynamic ports used for that session and then released.</p>
+</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="secure-ports">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#secure-ports">#</doc-anchor-trigger>
+        <span>Secure Ports</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Some network protocols transfer data in clear text format i.e. without any kind of encryption or encoding.</li>
+<li>This can lead to breach in confidentiality and integrity of the data transmitting across ports.</li>
+<li>Network sniffing could also reveal the content of documents and other files if they are sent via insecure protocols.</li>
+</ul>
+<doc-anchor-target id="common-ports-and-their-secure-alternatives">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-ports-and-their-secure-alternatives">#</doc-anchor-trigger>
+        <span>Common Ports and Their Secure Alternatives</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Insecure Port</th>
+<th>Description</th>
+<th>Protocol</th>
+<th>Secure Alternative Port</th>
+<th>Protocol</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>FTP</td>
+<td>Port 21, File Transfer Protocol (FTP) sends the username and password using plaintext from the client to the server. This could be intercepted by an attacker and later used to retrieve confidential information from the server. The secure alternative, SFTP, on port 22 uses encryption to protect the user credentials and packets of data being transferred.</td>
+<td>File Transfer Protocol</td>
+<td>22* - SFTP</td>
+<td>Secure File Transfer Protocol</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Telnet</td>
+<td>Port 23, telnet, is used by many Linux systems and any other systems as a basic text-based terminal. All information to and from the host on a telnet connection is sent in plaintext and can be intercepted by an attacker. This includes username and password as well as all information that is being presented on the screen, since this interface is all text. Secure Shell (SSH) on port 22 uses encryption to ensure that traffic between the host and terminal is not sent in a plaintext format.</td>
+<td>Telnet</td>
+<td>22* - SSH</td>
+<td>Secure Shell</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Time</td>
+<td>Port 37, Time Protocol, may be in use by legacy equipment and has mostly been replaced by using port 123 for Network Time Protocol (NTP). NTP on port 123 offers better error-handling capabilities, which reduces the likelihood of unexpected errors.</td>
+<td>Time Protocol</td>
+<td>123 - NTP</td>
+<td>Network Time Protocol</td>
+</tr>
+<tr>
+<td>53</td>
+<td>DNS</td>
+<td>Port 53, Domain Name Service (DNS), is still used widely. However, using DNS over TLS (DoT) on port 853 protects DNS information from being modified in transit.</td>
+<td>Domain Name Service</td>
+<td>853 - DoT</td>
+<td>DNS over TLS (DoT)</td>
+</tr>
+<tr>
+<td>80</td>
+<td>HTTP</td>
+<td>Port 80, HyperText Transfer Protocol (HTTP) is the basis of nearly all web browser traffic on the internet. Information sent via HTTP is not encrypted and is susceptible to sniffing attacks. HTTPS using TLS encryption is preferred, as it protects the data in transit between the server and the browser. Note that this is often notated as SSL/TLS. Secure Sockets Layer (SSL) has been compromised is no longer considered secure. It is now recommended for web servers and clients to use Transport Layer Security (TLS) 1.3 or higher for the best protection.</td>
+<td>HyperText Transfer Protocol</td>
+<td>443 - HTTPS</td>
+<td>HyperText Transfer Protocol (SSL/TLS)</td>
+</tr>
+<tr>
+<td>143</td>
+<td>IMAP</td>
+<td>Port 143, Internet Message Access Protocol (IMAP) is a protocol used for retrieving emails. IMAP traffic on port 143 is not encrypted and susceptible to network sniffing. The secure alternative is to use port 993 for IMAP, which adds SSL/TLS security to encrypt the data between the mail client and the mail server.</td>
+<td>Internet Message Access Protocol</td>
+<td>993 - IMAP</td>
+<td>IMAP for SSL/TLS</td>
+</tr>
+<tr>
+<td>161/162</td>
+<td>SNMP</td>
+<td>Ports 161 and 162, Simple Network Management Protocol, are commonly used to send and receive data used for managing infrastructure devices. Because sensitive information is often included in these messages, it is recommended to use SNMP version 2 or 3 (abbreviated SNMPv2 or SNMPv3) to include encryption and additional security features. Unlike many others discussed here, all versions of SNMP use the same ports, so there is not a definitive secure and insecure pairing. Additional context will be needed to determine if information on ports 161 and 162 is secured or not.</td>
+<td>Simple Network Management Protocol</td>
+<td>161/162 - SNMP</td>
+<td>SNMPv3</td>
+</tr>
+<tr>
+<td>445</td>
+<td>SMB</td>
+<td>Port 445, Server Message Block (SMB), is used by many versions of Windows for accessing files over the network. Files are transmitted unencrypted, and many vulnerabilities are well-known. Therefore, it is recommended that traffic on port 445 should not be allowed to pass through a firewall at the network perimeter. A more secure alternative is port 2049, Network File System (NFS). Although NFS can use encryption, it is recommended that NFS not be allowed through firewalls either.</td>
+<td>Server Message Block</td>
+<td>2049 - NFS</td>
+<td>Network File System</td>
+</tr>
+<tr>
+<td>389</td>
+<td>LDAP</td>
+<td>Port 389, Lightweight Directory Access Protocol (LDAP), is used to communicate directory information from servers to clients. This can be an address book for email or usernames for logins. The LDAP protocol also allows records in the directory to be updated, introducing additional risk. Since LDAP is not encrypted, it is susceptible to sniffing and manipulation attacks. Lightweight Directory Access Protocol Secure (LDAPS) adds SSL/TLS security to protect the information while it is in transit.</td>
+<td>Lightweight Directory Access Protocol</td>
+<td>636 - LDAPS</td>
+<td>Lightweight Directory Access Protocol Secure</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="413-applications">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#413-applications">#</doc-anchor-trigger>
+        <span>4.1.3 Applications</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="the-three-way-handshake">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-three-way-handshake">#</doc-anchor-trigger>
+        <span>The Three-Way Handshake</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>SYN</strong>: The &quot;SYN&quot; (Synchronize) is the first step in the TCP three-way handshake process. When a client initiates a connection to a server, it sends a SYN packet to the server indicating its intention to establish a connection.</li>
+<li><strong>ACK</strong>: The &quot;ACK&quot; (Acknowledgment) is the second step in the TCP three-way handshake. Upon receiving the SYN packet from the client, the server responds with an ACK packet to acknowledge the receipt of the client&#x27;s SYN packet.</li>
+<li><strong>SYN-ACK</strong>: The &quot;SYN-ACK&quot; is the third step in the TCP three-way handshake. In response to the server&#x27;s ACK packet, the client sends back a SYN-ACK packet to confirm the server&#x27;s acknowledgment.</li>
+<li><strong>Connection Established</strong>: Once the server receives the SYN-ACK packet from the client, the TCP three-way handshake is complete. The connection is now established between the client and the server, and they can begin data transmission.</li>
+</ul>
+<p>The SYN, ACK, SYN-ACK handshake is a critical process in TCP connections, ensuring that both the client and server agree to establish a reliable and synchronized connection before exchanging data. This handshake is fundamental to reliable data transmission and is used in various network communication protocols.</p>
+<p><figure class="content-center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F3.bp.blogspot.com%2F_AamnZyf3C_A%2FTBvQXqrnqII%2FAAAAAAAAAY0%2Flf0Kndz8N8A%2Fs1600%2Ftcp%2B3%2Bway%2Bhandshake.png&amp;f=1&amp;nofb=1&amp;ipt=e12254b535ae0c4f163238f68a4439947fbc2550c048f357637809f375ecb390&amp;ipo=images" alt="Three Way Handshake">
+    <figcaption class="caption">Three Way Handshake</figcaption>
+</figure>
+</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d4---network-security/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">D​4 Network Security</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d4---network-security/4.2-understand-network-(cyber)-threats-and-attacks/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">4.​2 Understand Network (cyber) threats and attacks</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Made with &lt;3 © Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "4.1 Understand Computer Networking", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+
+    <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+            window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.docs-powered-by');
+            elements.forEach(el => el.remove());
+    </script>
+
+</body>
+</html>

@@ -9,29 +9,32 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Categories</title>
-    <meta name="title" content="Categories">
+    <title>5.2 Configuration Management Overview</title>
+    <meta name="title" content="5.2 Configuration Management Overview">
+    <meta name="description" content="Identification: Recognizing and tracking essential system configurations.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://goofygiraffe06.github.io/categories/">
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.2-understand-system-hardening/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="og:title" content="Categories">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.2-understand-system-hardening/">
+    <meta property="og:title" content="5.2 Configuration Management Overview">
+    <meta property="og:description" content="Identification: Recognizing and tracking essential system configurations.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="twitter:title" content="Categories">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.2-understand-system-hardening/">
+    <meta property="twitter:title" content="5.2 Configuration Management Overview">
+    <meta property="twitter:description" content="Identification: Recognizing and tracking essential system configurations.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +49,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
                     </div>
@@ -146,19 +149,68 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="categories" class="break-words">
+<doc-anchor-target id="52-configuration-management-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#categories">#</doc-anchor-trigger>
-        <span>Categories</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#52-configuration-management-overview">#</doc-anchor-trigger>
+        <span>5.2 Configuration Management Overview</span>
     </h1>
 </doc-anchor-target>
-<ul style="padding-left: 0px;">
-<li class="relative block py-1">
-<a href="cloud/">Cloud</a>
-</li>
-<li class="relative block py-1">
-<a href="ctf-writeups/">CTF Writeups</a>
-</li>
+<ul>
+<li><strong>Identification</strong>: Recognizing and tracking essential system configurations.</li>
+<li><strong>Baseline</strong>: Establishing a reference point, or snapshot, of system configuration at a particular point in time.</li>
+<li><strong>Control</strong>: Managing and controlling any changes made to the system.</li>
+<li><strong>Updates and Patches</strong>: Regular implementation and verification of system updates and patches.</li>
+<li><strong>Accountability</strong>: Tracking all changes made to the system including who made them, when they were made, and why.</li>
+<li><strong>Auditing and Reviews</strong>: Regular system checks to ensure it is functioning as intended and is secure.</li>
+<li><strong>Documentation</strong>: Properly documenting all aspects of the system&#x27;s configuration and changes made.</li>
+</ul>
+<doc-anchor-target id="inventory">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inventory">#</doc-anchor-trigger>
+        <span>Inventory</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>First Step in Asset Management</strong>: Making an inventory, catalog, or registry of all the organization&#x27;s information assets is the first step in any asset management process.</li>
+<li><strong>Identify All Assets</strong>: It&#x27;s important to locate and identify all assets, especially the information assets. The axiom to remember is: &quot;You can&#x27;t protect what you don’t know you have.&quot;</li>
+<li><strong>Keeping Inventory Consistent and Current</strong>: It&#x27;s a challenge to keep the inventory and its status with respect to updates and patches consistent and current over time.</li>
+<li><strong>Challenging Task</strong>: Identifying every physical host and endpoint, and gathering data from them all, can be a challenging task in asset management.</li>
+</ul>
+<doc-anchor-target id="baseline">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#baseline">#</doc-anchor-trigger>
+        <span>Baseline</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Defining Baselines</strong>: A baseline is a comprehensive inventory of all a system’s components including hardware, software, data, administrative controls, documentation, and user instructions.</li>
+<li><strong>Referencing Baselines</strong>: Once security controls are in place to mitigate risks, the baselines can be referenced. All further comparisons and development are measured against these baselines.</li>
+<li><strong>Protection Level</strong>: Baselines are particularly helpful in achieving a minimal protection level of assets based on their value.</li>
+<li><strong>Security Requirements</strong>: If assets are classified based on their value, and meaningful baselines are established for each classification level, we can ensure conformance to the minimum levels of security required for each. For example, if classifications such as high, medium, and low are being used, baselines could be developed for each of these classifications to provide the minimum level of security required.</li>
+</ul>
+<doc-anchor-target id="updates">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updates">#</doc-anchor-trigger>
+        <span>Updates</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Repairs and Maintenance</strong>: Systems elements often require updates, maintenance, and repairs. This can involve all levels from basic IT architecture, operating systems, applications platforms, networks, and user interfaces.</li>
+<li><strong>Acceptance Testing</strong>: Any modifications, updates, or repairs must be acceptance tested. This testing verifies that newly installed functionality works as intended.</li>
+<li><strong>Regression Testing</strong>: In addition to acceptance testing, modifications must also undergo regression testing. This ensures that the modifications did not introduce any unexpected or erroneous behaviors into the system.</li>
+<li><strong>Ongoing Security Assessment</strong>: Regular security assessment and evaluation testing is essential. This assesses whether the system that passed initial acceptance testing remains secure after any changes. It&#x27;s crucial to continually assess security to adapt to new threats and ensure the system remains secure.</li>
+</ul>
+<doc-anchor-target id="patches">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#patches">#</doc-anchor-trigger>
+        <span>Patches</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Regular Maintenance</strong>: Patch management is an ongoing process as patches can come at irregular intervals from many vendors. Some patches are critical and should be deployed quickly, while others are not as critical but should still be deployed because subsequent patches may depend on them.</li>
+<li><strong>Testing Patches</strong>: Before implementing a patch across an organization, it should be tested to ensure it doesn&#x27;t negatively affect system functionality. However, due to budget restrictions, many organizations may not have a test environment that accurately mirrors their production environment, posing a risk that issues might arise in the production environment that weren&#x27;t identified in testing.</li>
+<li><strong>Rollback Plan</strong>: If a patch causes problems, it may be necessary to rollback the system to a previous state before the patch was applied. It&#x27;s important to have a documented rollback plan ready in case it&#x27;s needed.</li>
+<li><strong>Unattended Patching</strong>: Many vendors offer patch management solutions that include automated processes, or unattended updates. While this can help ensure systems are patched promptly, it may also result in unscheduled outages if systems need to be taken offline or rebooted as part of the patch process. The risks of unattended patching should be weighed against the risks of having unpatched systems.</li>
 </ul>
 
                                 
@@ -167,6 +219,27 @@
                             </div>
                             <footer class="clear-both">
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d5---security-operations/5.1-understand-data-security/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">5.​1 Data Handling</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d5---security-operations/5.3-understand-best-practice-security-policies/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">5.​3 Data Handling Policy</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -205,7 +278,7 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Categories", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "5.2 Configuration Management Overview", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

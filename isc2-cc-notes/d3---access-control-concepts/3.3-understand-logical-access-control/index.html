@@ -9,29 +9,32 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Categories</title>
-    <meta name="title" content="Categories">
+    <title>3.3 Understand Logical Access Control</title>
+    <meta name="title" content="3.3 Understand Logical Access Control">
+    <meta name="description" content="Logical access controls are electronic methods that restrict access to systems and sometimes tangible assets or areas.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://goofygiraffe06.github.io/categories/">
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.3-understand-logical-access-control/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="og:title" content="Categories">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.3-understand-logical-access-control/">
+    <meta property="og:title" content="3.3 Understand Logical Access Control">
+    <meta property="og:description" content="Logical access controls are electronic methods that restrict access to systems and sometimes tangible assets or areas.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="twitter:title" content="Categories">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.3-understand-logical-access-control/">
+    <meta property="twitter:title" content="3.3 Understand Logical Access Control">
+    <meta property="twitter:description" content="Logical access controls are electronic methods that restrict access to systems and sometimes tangible assets or areas.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +49,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
                     </div>
@@ -146,19 +149,77 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="categories" class="break-words">
+<doc-anchor-target id="33-understand-logical-access-control" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#categories">#</doc-anchor-trigger>
-        <span>Categories</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#33-understand-logical-access-control">#</doc-anchor-trigger>
+        <span>3.3 Understand Logical Access Control</span>
     </h1>
 </doc-anchor-target>
-<ul style="padding-left: 0px;">
-<li class="relative block py-1">
-<a href="cloud/">Cloud</a>
+<p>Logical access controls are electronic methods that restrict access to systems and sometimes tangible assets or areas. These controls include passwords, bio metrics implemented on devices like smartphones or laptops, and badge/token readers connected to systems. The purpose of these electronic tools is to limit access to assets even if the person already has physical access to the area.</p>
+<doc-anchor-target id="discretionary-access-control-dac">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#discretionary-access-control-dac">#</doc-anchor-trigger>
+        <span>Discretionary Access Control (DAC)</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>DAC is a type of access control policy used in information systems.</li>
+<li>It allows users with access to information to:
+<ul>
+<li>Share that information with others.</li>
+<li>Give similar access rights to other users.</li>
+<li>Change security settings on various items in the system.</li>
+<li>Decide the security settings for new or changed items.</li>
+<li>Modify access control rules (but not always).</li>
+</ul>
 </li>
-<li class="relative block py-1">
-<a href="ctf-writeups/">CTF Writeups</a>
-</li>
+<li>Most systems use DAC, so users can share files and give access to others, similar to how the original owner can.</li>
+<li>Rule-based access control systems often use DAC as a basis.</li>
+</ul>
+<doc-anchor-target id="mandatory-access-control-mac">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mandatory-access-control-mac">#</doc-anchor-trigger>
+        <span>Mandatory Access Control (MAC)</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Mandatory Access Control (MAC) policy is enforced uniformly across all subjects and objects in an information system.</li>
+<li>Only trusted security administrators can modify security rules for subjects and objects.</li>
+<li>Subjects are assigned a subset of privileges for a subset of objects, limiting what they can do.</li>
+<li>Subjects cannot pass information to unauthorized subjects or objects, grant privileges to others, change security attributes, or modify access control rules.</li>
+<li>The primary difference between MAC and DAC is that in MAC, security administrators control access rights, while in DAC, it&#x27;s up to the object owner&#x27;s discretion.</li>
+<li>The Security rules are decided by the security administrators.</li>
+</ul>
+<doc-anchor-target id="role-based-access-control-rbac">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#role-based-access-control-rbac">#</doc-anchor-trigger>
+        <span>Role-Based Access Control (RBAC)</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Role-based access control provides each worker privileges based on their role in the organization.</li>
+<li>Only Human Resources staff have access to personnel files; only Finance has access to bank accounts; and each manager has access to their own direct reports and department.</li>
+<li>Very high-level system administrators may have access to everything, while new employees have limited access, just the minimum required for their jobs.</li>
+<li>Monitoring role-based permissions is crucial to prevent privilege creep or permissions creep.</li>
+<li>Privilege creep occurs when a person&#x27;s permissions are expanded for a specific reason, but they are not reverted when no longer needed.</li>
+<li>Having multiple roles with different permissions requires close monitoring to ensure everyone has the necessary access.</li>
+<li>Jobs being ever-changing can make it challenging to keep track of roles and permissions.</li>
+<li>Extremely granular roles and permissions add complexity to the monitoring process.</li>
+<li>A best practice is to <strong>create standard roles</strong> and create new users based on those standards, avoiding copying user profiles directly.</li>
+</ul>
+<doc-anchor-target id="podcast-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#podcast-summary">#</doc-anchor-trigger>
+        <span>Podcast Summary</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Access control is the process of permitting or restricting access to applications or data at a granular level.</li>
+<li>In an organizational setting, access control can be challenging due to human connections and the need to balance access with security.</li>
+<li>Role-based access control (RBAC) provides access privileges based on an employee&#x27;s role in the organization.</li>
+<li>Separation of duties is crucial in preventing unintentional or intentional insider threats.</li>
+<li>Building good partnerships with HR and other departments can help in defining roles and access control.</li>
+<li>Connecting people and processes is essential for effective access control, and it goes beyond just technical solutions.</li>
 </ul>
 
                                 
@@ -167,6 +228,27 @@
                             </div>
                             <footer class="clear-both">
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d3---access-control-concepts/3.2-understand-physical-access-control/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">3.​2 Understand Physical Access Control</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d3---access-control-concepts/summary/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Summary</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -205,7 +287,7 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Categories", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "3.3 Understand Logical Access Control", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

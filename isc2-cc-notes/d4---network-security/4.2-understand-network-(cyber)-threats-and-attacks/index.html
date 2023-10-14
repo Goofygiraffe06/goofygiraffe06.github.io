@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750603237826">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>4.2 Understand Network (cyber) threats and attacks</title>
+    <meta name="title" content="4.2 Understand Network (cyber) threats and attacks">
+    <meta name="description" content="Host and Guest: Chad Kliewer, holder of CISSP and CCSP certifications, and Joe Sullivan, CISSP, former CISO in the banking and finance industry,...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.2-understand-network-(cyber)-threats-and-attacks/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.2-understand-network-(cyber)-threats-and-attacks/">
+    <meta property="og:title" content="4.2 Understand Network (cyber) threats and attacks">
+    <meta property="og:description" content="Host and Guest: Chad Kliewer, holder of CISSP and CCSP certifications, and Joe Sullivan, CISSP, former CISO in the banking and finance industry,...">
+    <meta property="og:image" content="https://goofygiraffe06.github.io/static/pasted_image_20230723122043.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d4---network-security/4.2-understand-network-(cyber)-threats-and-attacks/">
+    <meta property="twitter:title" content="4.2 Understand Network (cyber) threats and attacks">
+    <meta property="twitter:description" content="Host and Guest: Chad Kliewer, holder of CISSP and CCSP certifications, and Joe Sullivan, CISSP, former CISO in the banking and finance industry,...">
+    <meta property="twitter:image" content="https://goofygiraffe06.github.io/static/pasted_image_20230723122043.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="42-understand-network-cyber-threats-and-attacks" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-understand-network-cyber-threats-and-attacks">#</doc-anchor-trigger>
+        <span>4.2 Understand Network (cyber) threats and attacks</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="podcast-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#podcast-summary">#</doc-anchor-trigger>
+        <span>Podcast Summary</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Host and Guest: Chad Kliewer, holder of CISSP and CCSP certifications, and Joe Sullivan, CISSP, former CISO in the banking and finance industry, specialized in forensics, incident response, and recovery.</li>
+<li>Focus: The discussion centers on cyberattacks, their impact on businesses, and methods to prevent and detect them.</li>
+<li>SIEM for Actionable Intelligence: The use of Security Information Event Management (SIEM) systems is emphasized for detecting potential threats and indicators of compromise before actual breaches occur. Properly optimized SIEMs can pick up on activities like scanning, malicious email attachments, and web application enumeration, enabling early incident response actions.</li>
+<li>Cloud-Based Attacks: Cloud-based attacks present different challenges, including diverse threat surfaces and unique threat models. Cloud-based SIEMs or third-party services can still be used to detect and respond to attacks in the cloud environment.</li>
+<li>Supply Chain Attacks: The SolarWinds attack is discussed as a significant supply chain attack. Malicious code was embedded within a software update package, and the attackers utilized multiple cloud providers to evade detection.</li>
+<li>Threat Hunting vs. Pen Testing: The differences between threat hunting, penetration testing, and vulnerability scanning are explained. Threat hunting involves proactively looking for indicators of compromise and shortening the attack dwell time, while penetration testing aims to assess network vulnerabilities and improve security measures.</li>
+<li>PCI DSS: The T.J. Maxx incident is mentioned as one of the events that led to the development of the Payment Card Industry Data Security Standards (PCI DSS). PCI DSS is not a law but a contractual obligation between organizations and credit card companies to protect credit card data and maintain secure practices.</li>
+</ul>
+<p>Overall, the discussion stresses the importance of implementing fundamental security practices, such as asset inventory, network segmentation, logging, monitoring, patch management, and vulnerability scanning, to protect against cyberattacks and data breaches. (Summarized from Transcription by ChatGPT)</p>
+<doc-anchor-target id="types-of-threats">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#types-of-threats">#</doc-anchor-trigger>
+        <span>Types Of Threats</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Threat Type</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spoofing</td>
+<td>An attack using <strong>falsified identity to gain access</strong> to a target system.</td>
+</tr>
+<tr>
+<td>Phishing</td>
+<td>An attack that <strong>misdirects legitimate users to malicious websites</strong> through deceptive emails or URLs.</td>
+</tr>
+<tr>
+<td>Denial-of-Service (DoS)</td>
+<td>A network resource consumption attack aimed at <strong>preventing legitimate activity</strong> on a victimized system.</td>
+</tr>
+<tr>
+<td>Distributed Denial-of-Service (DDoS)</td>
+<td>A DoS attack involving numerous unsuspecting secondary victim systems to <strong>overwhelm the target</strong>.</td>
+</tr>
+<tr>
+<td>Computer Virus</td>
+<td><strong>Self-replicating code</strong> that spreads without user consent and aims to propagate and destroy data on systems.</td>
+</tr>
+<tr>
+<td>Worms</td>
+<td>Malicious code that <strong>self-propagates without human intervention</strong>, posing a risk to network security.</td>
+</tr>
+<tr>
+<td>Trojan</td>
+<td>A seemingly harmless software program carrying a <strong>hidden malicious payload</strong>, causing damage or data theft.</td>
+</tr>
+<tr>
+<td>On-Path or Man-in-the-Middle (MITM)</td>
+<td>Attackers position themselves between devices to <strong>intercept or modify information</strong> intended for endpoints.</td>
+</tr>
+<tr>
+<td>Side-Channel Attacks</td>
+<td>Passive, noninvasive attacks <strong>observing device operation</strong> through methods like power monitoring or timing.</td>
+</tr>
+<tr>
+<td>Advanced Persistent Threat (APT)</td>
+<td><strong>Highly sophisticated and organized attacks</strong> demonstrating technical and operational skill over an extended period.</td>
+</tr>
+<tr>
+<td>Insider Threats</td>
+<td>Threats arising from <strong>trusted individuals within the organization</strong>, potentially due to disgruntlement or espionage.</td>
+</tr>
+<tr>
+<td>Malware</td>
+<td>Programs <strong>inserted into systems, compromising data</strong>, applications, or the operating system for malicious purposes.</td>
+</tr>
+<tr>
+<td>Ransomware</td>
+<td>Malware facilitating <strong>ransom attacks by encrypting files</strong> on the victim&#x27;s computer and <strong>demanding payment</strong> for decryption.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="steps-to-protect-networks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#steps-to-protect-networks">#</doc-anchor-trigger>
+        <span>Steps to Protect Networks</span>
+    </h2>
+</doc-anchor-target>
+<p>There is no silver bullet in cyber security that can protect against all types of attacks. However, there are fundamental steps that can be taken to improve network security and provide a solid base of defense against a multitude of cyber threats. Here are a few examples:</p>
+<ol>
+<li><p><strong>Disable Unnecessary Services and Protocols</strong>
+If a system doesn’t need a particular service or protocol, it should not be running. Attackers cannot exploit a vulnerability in a service or protocol that isn’t running on a system.</p>
+</li>
+<li><p><strong>Use Firewalls</strong>
+Firewalls can prevent many types of attacks. There are two main types of firewalls:</p>
+<ul>
+<li><strong>Network-based firewalls</strong> protect entire networks.</li>
+<li><strong>Host-based firewalls</strong> protect individual systems.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="intrusion-detection-system-ids">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intrusion-detection-system-ids">#</doc-anchor-trigger>
+        <span>Intrusion Detection System (IDS)</span>
+    </h2>
+</doc-anchor-target>
+<p>An intrusion occurs when an attacker bypasses or subverts security mechanisms and gains access to an organization’s resources. Intrusion detection involves monitoring recorded information and real-time events to identify abnormal activity that suggests a potential incident or intrusion.</p>
+<p>An <strong>Intrusion Detection System (IDS)</strong> automates the examination of logs and real-time system events to identify intrusion attempts and system failures.</p>
+<doc-anchor-target id="role-of-ids">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#role-of-ids">#</doc-anchor-trigger>
+        <span>Role of IDS</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>IDS forms part of a multi-layered security strategy, complementing other security mechanisms such as firewalls.</li>
+<li>IDS can recognize attacks from external sources, like the internet, and internal threats like a malicious worm.</li>
+<li>Once a suspicious event is detected, IDS responds by sending alerts or raising alarms.</li>
+<li>The primary goal of an IDS is to facilitate a timely and accurate response to intrusions.</li>
+</ul>
+<doc-anchor-target id="types-of-ids">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#types-of-ids">#</doc-anchor-trigger>
+        <span>Types of IDS</span>
+    </h3>
+</doc-anchor-target>
+<p>Intrusion detection systems are generally classified into two types:</p>
+<doc-anchor-target id="host-based-ids-hids">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#host-based-ids-hids">#</doc-anchor-trigger>
+        <span>Host-Based IDS (HIDS)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>It monitors elements such as process calls and information recorded in system, application, security, and host-based firewall logs.</li>
+<li>It can examine events in greater detail compared to a Network-based Intrusion Detection System (NIDS), allowing it to identify specific files that may be compromised during an attack.</li>
+<li>It can also track the processes employed by an attacker.</li>
+</ul>
+<doc-anchor-target id="advantages">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advantages">#</doc-anchor-trigger>
+        <span>Advantages</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>A HIDS can detect anomalies on the host system that a NIDS might miss. For example, it can detect infections where an intruder has infiltrated a system and is controlling it remotely.</li>
+</ul>
+<doc-anchor-target id="disadvantages">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disadvantages">#</doc-anchor-trigger>
+        <span>Disadvantages</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>HIDSs are more costly to manage than NIDSs because they require individual administration on each system, whereas NIDSs typically support centralized administration.</li>
+<li>A HIDS cannot detect network attacks on other systems.</li>
+</ul>
+<doc-anchor-target id="network-based-ids-nids">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-based-ids-nids">#</doc-anchor-trigger>
+        <span>Network-Based IDS (NIDS)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>It has the ability to monitor traffic details, however, it cannot monitor the content of encrypted traffic.</li>
+<li>Remote sensors can be used by a single NIDS to collect data at crucial network locations, sending this data to a central management console.</li>
+<li>These sensors can monitor traffic at various network hardware such as routers, firewalls, and network switches that support port mirroring, as well as other types of network taps.</li>
+</ul>
+<doc-anchor-target id="advantages-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advantages-1">#</doc-anchor-trigger>
+        <span>Advantages</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>A NIDS has minimal impact on overall network performance and, when deployed on a dedicated system, it does not affect performance on any other computer.</li>
+<li>It is typically capable of detecting the initiation of an attack or ongoing attacks.</li>
+</ul>
+<doc-anchor-target id="disadvantages-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disadvantages-1">#</doc-anchor-trigger>
+        <span>Disadvantages</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>It may not always provide information about the success of an attack.</li>
+<li>It may not know if an attack has affected specific systems, user accounts, files, or applications.</li>
+</ul>
+<doc-anchor-target id="security-information-and-event-management-siem">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-information-and-event-management-siem">#</doc-anchor-trigger>
+        <span>Security Information and Event Management (SIEM)</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Security Information and Event Management (SIEM)</strong> is a technology that helps in managing security by using tools that collect information about the IT environment from many disparate sources. The goal is to better examine the overall security of the organization and streamline security efforts.</p>
+<doc-anchor-target id="role-of-siem">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#role-of-siem">#</doc-anchor-trigger>
+        <span>Role of SIEM</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>SIEM solutions gather log data from various sources across the enterprise to better understand potential security concerns.</li>
+<li>These systems help in allocating resources appropriately, depending on the security needs.</li>
+<li>SIEM systems can work with other components as part of a defense-in-depth strategy, enhancing the overall information security program.</li>
+</ul>
+<doc-anchor-target id="preventing-threats">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#preventing-threats">#</doc-anchor-trigger>
+        <span>Preventing Threats</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Keep Systems and Applications Up-to-Date:</strong> Vendors regularly release patches to correct bugs and security flaws, but these only help when they are applied. Patch management ensures that systems and applications are kept up to date with relevant patches.</li>
+<li><strong>Remove or Disable Unneeded Services and Protocols:</strong> If a system doesn’t need a service or protocol, it should not be running. Attackers cannot exploit a vulnerability in a service or protocol that isn’t running on a system.</li>
+<li><strong>Use Intrusion Detection and Prevention Systems:</strong> Intrusion detection and prevention systems observe activity, attempt to detect threats and provide alerts. They can often block or stop attacks.</li>
+<li><strong>Use Up-to-Date Anti-Malware Software:</strong> Various types of malicious code such as viruses and worms can be mitigated with up-to-date anti-malware software.</li>
+<li><strong>Use Firewalls:</strong> Firewalls can prevent many different types of threats. Network-based firewalls protect entire networks, and host-based firewalls protect individual systems.</li>
+</ul>
+<doc-anchor-target id="antivirus">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#antivirus">#</doc-anchor-trigger>
+        <span>Antivirus</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The use of antivirus products is strongly encouraged as a security best practice and is a requirement for compliance with the Payment Card Industry Data Security Standard (PCI DSS).</li>
+<li>Several antivirus products are available and many can be deployed as part of an enterprise solution integrating with several other security products.</li>
+<li>Antivirus systems aim to identify malware either by recognizing the signature of known malware or detecting abnormal system activity.</li>
+<li>This identification process utilizes various types of scanners, pattern recognition, and advanced machine learning algorithms.</li>
+<li>Modern anti-malware solutions go beyond mere virus protection, aiming to provide a more comprehensive approach, including detection of rootkits, ransomware, and spyware.</li>
+<li>Many endpoint solutions also include software firewalls and Intrusion Detection Systems (IDS) or Intrusion Prevention Systems (IPS).</li>
+</ul>
+<doc-anchor-target id="firewalls">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#firewalls">#</doc-anchor-trigger>
+        <span>Firewalls</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The term &#x27;firewall&#x27; is borrowed from the field of building construction or vehicle design, where it refers to a physical barrier that prevents the spread of fire from one area to another. In the context of computer security, firewalls act as a security measure to isolate network segments from each other.</li>
+<li>Firewalls enforce security policies by filtering network traffic based on a set of rules.</li>
+<li>Firewalls can manage traffic at Layers 2 (MAC addresses), 3 (IP ranges), and 7 (application programming interface (API) and application firewalls), but traditionally, they have been implemented to control traffic at Layer 4.</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../../../static/pasted_image_20230723122043.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="intrusion-prevention-system-ips">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intrusion-prevention-system-ips">#</doc-anchor-trigger>
+        <span>Intrusion Prevention System (IPS)</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>An Intrusion Prevention System (IPS) is a special type of active IDS (Intrusion Detection System) that automatically attempts to detect and block attacks before they reach the target systems.</li>
+<li>The key distinguishing difference between an IDS and an IPS is that the IPS is placed in line with the traffic. This means that all traffic must pass through the IPS. After analyzing the traffic, the IPS can decide what to forward and what to block, thus preventing an attack from reaching its target.</li>
+<li>IPS systems are most effective at preventing network-based attacks. Therefore, it is common to see the IPS function integrated into firewalls.</li>
+<li>Just like IDS, IPS also have two variants: Network-based IPS (NIPS) and Host-based IPS (HIPS).</li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d4---network-security/4.1-understand-computer-networking/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">4.​1 Understand Computer Networking</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d4---network-security/4.3-understand-network--security-infrastructure/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">4.​3 Understand Network Security Infrastructure</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Made with &lt;3 © Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "4.2 Understand Network (cyber) threats and attacks", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+
+    <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+            window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.docs-powered-by');
+            elements.forEach(el => el.remove());
+    </script>
+
+</body>
+</html>

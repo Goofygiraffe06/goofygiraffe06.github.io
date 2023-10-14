@@ -9,32 +9,32 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>PatriotCTF</title>
-    <meta name="title" content="PatriotCTF">
-    <meta name="description" content="A list of writeups for the challenges I solved during the PatriotCTF 2023.">
+    <title>3.1 Understand Access Control Concepts</title>
+    <meta name="title" content="3.1 Understand Access Control Concepts">
+    <meta name="description" content="A subject can be defined as any entity that requests access to our assets.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://goofygiraffe06.github.io/patriotctf/">
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.1-understand-access-control-concepts/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goofygiraffe06.github.io/patriotctf/">
-    <meta property="og:title" content="PatriotCTF">
-    <meta property="og:description" content="A list of writeups for the challenges I solved during the PatriotCTF 2023.">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.1-understand-access-control-concepts/">
+    <meta property="og:title" content="3.1 Understand Access Control Concepts">
+    <meta property="og:description" content="A subject can be defined as any entity that requests access to our assets.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goofygiraffe06.github.io/patriotctf/">
-    <meta property="twitter:title" content="PatriotCTF">
-    <meta property="twitter:description" content="A list of writeups for the challenges I solved during the PatriotCTF 2023.">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d3---access-control-concepts/3.1-understand-access-control-concepts/">
+    <meta property="twitter:title" content="3.1 Understand Access Control Concepts">
+    <meta property="twitter:description" content="A subject can be defined as any entity that requests access to our assets.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +49,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
                     </div>
@@ -149,13 +149,150 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="patriotctf" class="break-words">
+<doc-anchor-target id="31-understand-access-control-concepts" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#patriotctf">#</doc-anchor-trigger>
-        <span>PatriotCTF</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31-understand-access-control-concepts">#</doc-anchor-trigger>
+        <span>3.1 Understand Access Control Concepts</span>
     </h1>
 </doc-anchor-target>
-<p>A list of writeups for the challenges I solved during the PatriotCTF 2023.</p>
+<doc-anchor-target id="subject">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#subject">#</doc-anchor-trigger>
+        <span>Subject</span>
+    </h3>
+</doc-anchor-target>
+<p>A subject can be defined as any entity that requests access to our assets.</p>
+<p>A subject:</p>
+<ul>
+<li>Is a user, a process, a procedure, a client (or a server), a program, a device such as an endpoint, workstation, smartphone or removable storage device with onboard firmware.</li>
+<li>Is active: It initiates a request for access to resources or services.</li>
+<li>Requests a service from an object.</li>
+<li>Should have a level of clearance (permissions) that relates to its ability to successfully access services or resources.</li>
+</ul>
+<doc-anchor-target id="object">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#object">#</doc-anchor-trigger>
+        <span>Object</span>
+    </h3>
+</doc-anchor-target>
+<p>Anything that a subject attempts to access is referred to as an object.</p>
+<p>An object:- Access control includes various permissions such as system access, building access, access to server rooms, access to networks, applications, and utilities.</p>
+<ul>
+<li>These implementations of access control form part of a layered defense strategy known as defense in depth.</li>
+<li>Defense in depth is an information security strategy that integrates people, technology, and operations capabilities to establish variable barriers across multiple layers and missions of an organization.</li>
+<li>It employs multiple countermeasures in a layered fashion to achieve security objectives.</li>
+<li>While defense in depth aims to prevent or deter cyberattacks, it cannot guarantee that an attack will not occur.</li>
+<li>Is a building, a computer, a file, a database, a printer or scanner, a server, a communications resource, a block of memory, an input/output port, a person, a software task, thread or process.</li>
+<li>Is anything that provides service to a user.</li>
+<li>Is passive.</li>
+<li>Responds to a request.</li>
+<li>May have a classification.</li>
+</ul>
+<doc-anchor-target id="access-rule">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#access-rule">#</doc-anchor-trigger>
+        <span>Access Rule</span>
+    </h3>
+</doc-anchor-target>
+<p>An access rule is an instruction developed to allow or deny access to an object by comparing the validated identity of the subject to an access control list. The rule will contain or reference a set of attributes that define what level of access has been determined to be appropriate.</p>
+<p>A rule can:</p>
+<ul>
+<li>Compare multiple attributes to determine appropriate access.</li>
+<li>Allow access to an object.</li>
+<li>Define how much access is allowed.</li>
+<li>Deny access to an object.</li>
+<li>Apply time-based access.</li>
+</ul>
+<doc-anchor-target id="defense-in-depth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#defense-in-depth">#</doc-anchor-trigger>
+        <span>Defense In Depth</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Access control includes various permissions such as system access, building access, access to server rooms, access to networks, applications, and utilities.</li>
+<li>These implementations of access control form part of a layered defense strategy known as defense in depth.</li>
+<li>Defense in depth is an information security strategy that integrates people, technology, and operations capabilities to establish variable barriers across multiple layers and missions of an organization.</li>
+<li>It employs multiple countermeasures in a layered fashion to achieve security objectives.</li>
+<li>While defense in depth aims to prevent or deter cyber attacks, it cannot guarantee that an attack will not occur.</li>
+</ul>
+<doc-anchor-target id="least-privilege">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#least-privilege">#</doc-anchor-trigger>
+        <span>Least Privilege</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The Principle of Least Privilege is a standard that advocates granting users or programs only the minimum access necessary to fulfill their functions.</li>
+<li>Users are given access only to the systems and programs required for performing their specific job or tasks.</li>
+</ul>
+<doc-anchor-target id="privilege-access-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#privilege-access-management">#</doc-anchor-trigger>
+        <span>Privilege Access Management</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Privileged access management is used to preserve the confidentiality of information and ensure that only authorized personnel can access it, based on the principle of least privilege.</li>
+<li>Each user is granted access only to the specific items they need and nothing more.</li>
+<li>For example, in a billing department, only authorized individuals can view consumer financial data, and even fewer have the authority to modify or delete such data, maintaining confidentiality and integrity.</li>
+<li>Administrative access is provided with appropriate passwords or sign-ins to verify users&#x27; permissions for accessing the data.</li>
+<li>Temporary or limited access may be granted for specific time periods or within business hours, and access rules can restrict the fields individuals can access.</li>
+<li>In a healthcare environment, access to patient data might be limited based on specific roles and responsibilities. This is often regulated by laws like HIPAA in the United States and privacy laws in other countries.</li>
+<li>Systems monitor access to private information, triggering alarms if unauthorized access is detected. Security administrators record incidents and alert appropriate personnel for action.</li>
+<li>The level of security around access increases with the criticality of the information, including implementing multi-factor authentication for higher-level access.</li>
+</ul>
+<doc-anchor-target id="privileged-accounts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#privileged-accounts">#</doc-anchor-trigger>
+        <span>Privileged Accounts</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Privileged accounts have permissions beyond those of normal users, typically used by managers and administrators.</li>
+<li>Various classes of users utilize privileged accounts, including:
+<ul>
+<li>Systems administrators, responsible for operating systems, application deployment, and performance management.</li>
+<li>Help desk or IT support staff, who require privileged access to endpoints, servers, and applications platforms for support tasks.</li>
+<li>Security analysts, needing rapid access to the entire IT infrastructure and data environment of the organization.</li>
+</ul>
+</li>
+<li>Additional privileged user accounts may be created for specific projects or clients, granting greater control over data and applications.</li>
+<li>Delegating the management and protection of information assets to trusted managerial, supervisory, or leadership personnel is common, but contingent on trustworthiness to avoid potential harm to the organization and stakeholders.</li>
+</ul>
+<p><strong>Measures for Moderating Privileged Account Risks:</strong></p>
+<ul>
+<li><strong>Extensive Logging:</strong> Privileged actions are extensively logged to serve as a deterrent and for administrative control, enabling audits and detection of malicious activity.</li>
+<li><strong>Stringent Access Control:</strong> Privileged users are required to undergo more rigorous authentication, and just-in-time identity can restrict privileges to specific tasks and times.</li>
+<li><strong>Deeper Trust Verification:</strong> Privileged account holders undergo detailed background checks, nondisclosure agreements, acceptable use policies, and may be subject to financial investigation.</li>
+<li><strong>Enhanced Auditing:</strong> Privileged account activity is monitored and audited at a higher rate and extent than regular user accounts.</li>
+</ul>
+<doc-anchor-target id="segregation-of-duties">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#segregation-of-duties">#</doc-anchor-trigger>
+        <span>Segregation of Duties</span>
+    </h3>
+</doc-anchor-target>
+<p>A core element of authorization is the principle of segregation of duties (also known as separation of duties). Segregation of duties is based on the security practice that no one person should control an entire high-risk transaction from start to finish.</p>
+<ul>
+<li>Segregation of duties breaks the transaction into separate parts and requires a different person to execute each part of the transaction.</li>
+<li>For example, an employee may submit an invoice for payment to a vendor (or for reimbursement to themselves), but it must be approved by a manager prior to payment.</li>
+<li>In another instance, almost anyone may submit a proposal for a change to a system configuration, but the request must go through technical and management review and gain approval before implementation.</li>
+<li>These steps can prevent fraud or detect errors in the process before implementation.</li>
+</ul>
+<p>When two individuals can willfully work together to bypass the segregation of duties, so that they could jointly commit fraud. This is called collusion.</p>
+<doc-anchor-target id="two-person-integrity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#two-person-integrity">#</doc-anchor-trigger>
+        <span>Two-Person Integrity</span>
+    </h3>
+</doc-anchor-target>
+<p>The two-person rule is a security strategy that requires a minimum of two people to be in an area together, making it impossible for a person to be in the area alone.</p>
+<ul>
+<li>Many access control systems prevent an individual cardholder from entering a selected high-security area unless accompanied by at least one other person.</li>
+<li>Use of the two-person rule can help reduce insider threats to critical areas by requiring at least two individuals to be present at any time.</li>
+<li>It is also used for life safety within a security area; if one person has a medical emergency, there will be assistance present.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -165,20 +302,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../isc2-cc-notes/(isc)2-cc/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d3---access-control-concepts/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Domains Covered</span>
+                                                <span class="block mt-1">D​3 Access Control Concepts</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../patriotctf/checkmate/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d3---access-control-concepts/3.2-understand-physical-access-control/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Checkmate [Medium]</span>
+                                                <span class="block mt-1">3.​2 Understand Physical Access Control</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -222,7 +359,7 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "PatriotCTF", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "3.1 Understand Access Control Concepts", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

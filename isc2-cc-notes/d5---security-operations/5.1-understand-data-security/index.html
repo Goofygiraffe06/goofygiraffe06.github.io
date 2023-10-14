@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750603237826">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>5.1 Data Handling</title>
+    <meta name="title" content="5.1 Data Handling">
+    <meta name="description" content="Creation">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.1-understand-data-security/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.1-understand-data-security/">
+    <meta property="og:title" content="5.1 Data Handling">
+    <meta property="og:description" content="Creation">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d5---security-operations/5.1-understand-data-security/">
+    <meta property="twitter:title" content="5.1 Data Handling">
+    <meta property="twitter:description" content="Creation">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="51-data-handling" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#51-data-handling">#</doc-anchor-trigger>
+        <span>5.1 Data Handling</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="lifecycle-of-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lifecycle-of-data">#</doc-anchor-trigger>
+        <span>Lifecycle Of Data</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Creation</li>
+<li>Processing</li>
+<li>Storage</li>
+<li>Transmission</li>
+<li>Access</li>
+<li>Archiving</li>
+<li>Destruction/Disposal</li>
+</ul>
+<doc-anchor-target id="data-handling-processes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-handling-processes">#</doc-anchor-trigger>
+        <span>Data Handling Processes</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="classification">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#classification">#</doc-anchor-trigger>
+        <span>Classification</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Recognizing Value and Securing Data</strong>: Businesses classify data in recognition of its value. Classifications dictate the rules and restrictions about how that data can be used, stored, or shared. The purpose of classification is to prevent the leakage of data, maintaining its value and importance.</li>
+<li><strong>Pre-labeling Assessment</strong>: Before data can be labeled with its sensitivity level or handling requirements, the potential impact or loss to the organization if the data is compromised needs to be assessed. This process forms the basis for classification.</li>
+<li><strong>Classification</strong>: Classification is a process that identifies the potential organizational impacts if data suffers any security compromises, particularly relating to its confidentiality, integrity, and availability. The information is then labeled and handled accordingly.</li>
+<li><strong>Sources of Classification</strong>: Classifications are often derived from laws, regulations, contractual standards, or business expectations. These classifications may range from minor disruptions to grave threats that could lead to loss of life or pose existential threats to the organization.</li>
+<li><strong>Benefits of Classification</strong>: Classification can lead to a more efficient design and implementation of security processes. If data with similar classifications can be protected using the same controls strategy, this can streamline security processes and make them more effective.</li>
+</ol>
+<doc-anchor-target id="labeling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#labeling">#</doc-anchor-trigger>
+        <span>Labeling</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Highly Restricted</strong>: This label is assigned to data whose compromise could significantly threaten the organization&#x27;s existence. The unauthorized access or loss of such data could lead to substantial loss of life, injury, property damage, and subsequent litigation or claims.</li>
+<li><strong>Moderately Restricted</strong>: This level of sensitivity is applied to data whose compromise could lead to temporary loss of competitive advantage, financial loss, or disruption of planned investments or activities. While the consequences are not as severe as &quot;highly restricted&quot; data, they still could have significant impacts.</li>
+<li><strong>Low Sensitivity / Internal Use Only</strong>: Data with this label is not intended for public release but its compromise could cause minor disruptions, delays, or impacts to the organization. It is typically data that is meant for use within the organization and doesn&#x27;t contain highly sensitive information.</li>
+<li><strong>Unrestricted / Public Data</strong>: This category includes data that is already publicly available or intended for public release. No harm can come from further dissemination or disclosure of this data, as it&#x27;s intended for public consumption.</li>
+</ol>
+<doc-anchor-target id="retention">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#retention">#</doc-anchor-trigger>
+        <span>Retention</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Purpose of Data Retention</strong>: Data should only be retained for as long as it is beneficial to the organization. The period of retention may be determined by industry standards, laws, regulations, or organizational policies.</li>
+<li><strong>Scope of Data Retention</strong>: Data retention policies apply to both hard copies and electronic data. No data should be kept beyond its required or useful life.</li>
+<li><strong>Security Professionals&#x27; Role</strong>: Security professionals need to ensure that data destruction is carried out when an asset reaches its retention limit. This requires an accurate inventory that includes information about the asset location, retention period requirement, and destruction requirements.</li>
+<li><strong>Periodic Review</strong>: Organizations should conduct periodic reviews of retained records to minimize the volume of stored information and ensure only necessary information is preserved.</li>
+<li><strong>Records Retention Policies</strong>: These policies indicate how long an organization is required to maintain information and assets. They should ensure that personnel understand the various retention requirements for different types of data, the organization documents the retention requirements, and the organization retains information according to the required schedule but no longer.</li>
+<li><strong>Common Mistake</strong>: A common error is applying the longest retention period to all types of information in an organization. This increases storage costs and risks of data exposure, adds noise when searching for relevant records, and may violate externally mandated requirements.</li>
+<li><strong>Destruction of Records</strong>: Records and information no longer required should be destroyed in accordance with the enterprise&#x27;s policies and any applicable legal requirements.</li>
+</ol>
+<doc-anchor-target id="destruction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#destruction">#</doc-anchor-trigger>
+        <span>Destruction</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Understanding Data Remanence</strong>: Data remanence refers to the residual data that might remain on a device even after data deletion. This residual data could pose significant security threats if not addressed properly.</li>
+<li><strong>Clearing the Device</strong>: One way to address data remanence is by clearing the device. This process involves writing multiple patterns of random values throughout all storage media. This method, sometimes referred to as overwriting or zeroing, may still leave recoverable sensitive information if some blocks or storage extents are missed during the process.</li>
+<li><strong>Purging the Device</strong>: Another method to address data remanence is by purging the device, a process which eliminates or greatly reduces the chance of recovering residual data from the original values, even after the system has been cleared. Some storage technologies may still leave &quot;ghost&quot; data after being overwritten multiple times, which purging aims to eliminate.</li>
+<li><strong>Physical Destruction</strong>: The most secure method of preventing data remanence is physically destroying the device. This could involve shredding, chopping, breaking, etching in acid, or burning the device. The remains may then be buried in protected landfills.</li>
+<li><strong>Clearing vs Purging/Destruction</strong>: While clearing might be sufficient in routine operational environments, when system elements are to be removed and replaced, either as part of maintenance upgrades or for disposal, purging or destruction may be necessary to fully protect sensitive information from potential attacks.</li>
+</ol>
+<doc-anchor-target id="logging-and-monitoring-security-events">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging-and-monitoring-security-events">#</doc-anchor-trigger>
+        <span>Logging and Monitoring Security Events</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Logging is a crucial aspect of maintaining security in systems as it captures signals generated by events and changes within the system.</li>
+<li>Information that may be relevant to log includes user IDs, system activities, dates/times of key events, device and location identity, system access attempts, and system configuration changes.</li>
+<li>Monitoring the health of the information environment is essential for identifying inefficient systems, detecting compromises, and providing a record of system usage.</li>
+<li>Log reviews are vital for security assessment and testing, identifying security incidents, policy violations, fraudulent activities, and operational problems in near real-time.</li>
+<li>Log reviews also support audits and forensic analysis related to internal and external investigations, and provide a basis for organizational security baselines.</li>
+<li>Creating a log management infrastructure helps preserve the integrity of log data from accidental or intentional modification or deletion and maintains the confidentiality of log data.</li>
+<li>Controls should be implemented to protect against unauthorized changes to log information, including alterations to the recorded messages, log files being edited or deleted, and the storage capacity of log file media being exceeded.</li>
+<li>Organizations need to adhere to a retention policy for logs as prescribed by law, regulations, and corporate governance.</li>
+<li>Policies and procedures should be in place to address the preservation of original logs and to protect the log data from malicious use, as logs contain valuable and sensitive information about the organization.</li>
+</ul>
+<doc-anchor-target id="best-practices">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
+        <span>Best Practices</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p>Ingress monitoring refers to the surveillance and assessment of all inbound communications traffic and access attempts. Tools used for this include:</p>
+<ul>
+<li>Firewalls</li>
+<li>Gateways</li>
+<li>Remote authentication servers</li>
+<li>Intrusion Detection System/Intrusion Prevention System (IDS/IPS) tools</li>
+<li>Security Information and Event Management (SIEM) solutions</li>
+<li>Anti-malware solutions</li>
+</ul>
+</li>
+<li><p>Egress monitoring is used to regulate data leaving the organization&#x27;s IT environment, often through Data Loss Prevention (DLP) or Data Leak Protection solutions.</p>
+</li>
+<li><p>DLP solutions should be able to inspect all forms of data leaving the organization, such as:</p>
+<ul>
+<li>Email (content and attachments)</li>
+<li>Copy to portable media</li>
+<li>File Transfer Protocol (FTP)</li>
+<li>Posting to web pages/websites</li>
+<li>Applications/Application Programming Interfaces (APIs)</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="512-encryption">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#512-encryption">#</doc-anchor-trigger>
+        <span>5.1.2 Encryption</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="overview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>An encryption system consists of hardware, software, algorithms, control parameters, and operational methods, all designed to provide encryption services.</li>
+<li>Plaintext refers to data or messages in their normal, unencrypted form. The information in plaintext is immediately available for use by the end user (either a person or a process).</li>
+<li>Plaintext can take many forms, including:
+<ul>
+<li>Image, audio, or video files, either in raw or compressed formats.</li>
+<li>Human-readable text and numeric data, potentially featuring markup language elements for formatting and metadata.</li>
+<li>Database files or records and fields within a database.</li>
+<li>Any other data that can be represented digitally for computer processing, transmission, and storage.</li>
+</ul>
+</li>
+<li>Importantly, plaintext is not necessarily human-readable and can encompass a broad range of digital data.</li>
+</ul>
+<doc-anchor-target id="symmetric-encryption">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#symmetric-encryption">#</doc-anchor-trigger>
+        <span>Symmetric Encryption</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p>Symmetric encryption is a method of encryption where the same key is used for both the encryption and decryption processes.</p>
+</li>
+<li><p>This encryption method ensures data security as only someone with the correct key can decrypt the message.</p>
+</li>
+<li><p>However, symmetric encryption presents several challenges:</p>
+<ul>
+<li>If two parties suspect a communication path between them is compromised, they cannot share the key via that path as it would likely be intercepted.</li>
+<li>Distribution of the key is difficult as it must be sent through a different channel (out-of-band key distribution) than the encrypted message to prevent interception.</li>
+<li>Any party with knowledge of the key can access and potentially alter the message.</li>
+<li>The scalability of symmetric encryption is challenging because the number of keys grows rapidly as the number of different users or groups increases. For example, an organization of 1,000 employees would need to manage 499,500 keys if every employee wanted to communicate confidentially with every other employee.
+![[Pasted image 20230723181656.png]]</li>
+</ul>
+</li>
+<li><p>It is also used for:</p>
+<ul>
+<li>Encrypting bulk data, such as backups, hard drives, and portable media.</li>
+<li>Encrypting messages that are traversing communication channels, like IPsec and TLS.</li>
+<li>Streaming large-scale, time-sensitive data, such as audio/video materials and gaming.</li>
+</ul>
+</li>
+<li><p>Symmetric algorithms are also known by several other names:</p>
+<ul>
+<li>Same key</li>
+<li>Single key</li>
+<li>Shared key</li>
+<li>Secret key</li>
+<li>Session key</li>
+</ul>
+</li>
+<li><p>An example of symmetric encryption is a substitution cipher, which involves substituting letters for other letters or bits for other bits, based on a cryptovariable. For instance, these ciphers may involve replacing each letter of the plaintext with another letter that&#x27;s further down the alphabet.</p>
+</li>
+</ul>
+<doc-anchor-target id="asymmetric-encryption">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#asymmetric-encryption">#</doc-anchor-trigger>
+        <span>Asymmetric Encryption</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Asymmetric encryption uses one key to encrypt and a different key to decrypt the input plaintext, as opposed to symmetric encryption that uses the same key for both encryption and decryption.</li>
+<li>To use asymmetric encryption, a user generates a key pair: one is kept secret (the private key), and the other can be given freely to anyone (the public key).</li>
+<li>Anyone can encrypt a message using the recipient&#x27;s public key, but only the recipient with their private key can decrypt it.</li>
+<li>Asymmetric encryption solves the problem of key distribution by allowing secure message transfer across an untrusted medium without needing prior key exchange or key material distribution.</li>
+<li>Other features of asymmetric encryption include non-repudiation of origin and delivery, access control, and data integrity.</li>
+<li>Asymmetric encryption solves the problem of scalability as each party only requires a key pair, reducing the total number of keys needed compared to symmetric encryption.</li>
+<li>The main disadvantage of asymmetric encryption is its slowness compared to symmetric encryption due to its handling of much larger keys and more intensive mathematical operations. This makes it impractical for everyday use in encrypting large amounts of data or for frequent transactions where speed is required.
+![[Pasted image 20230723182111.png]]</li>
+</ul>
+<doc-anchor-target id="hashing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hashing">#</doc-anchor-trigger>
+        <span>Hashing</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><strong>Hashing Basics</strong>: Hashing is a cryptographic process that takes an input (or &#x27;message&#x27;) and returns a fixed-size string of bytes. The output is typically a &#x27;digest&#x27; that is unique to each unique input.</li>
+<li><strong>One-Way Function</strong>: Hash functions are designed to be one-way, meaning that once data is hashed, it is computationally infeasible to retrieve the original input from the hash output. This makes hashing a useful tool for storing sensitive information like passwords.</li>
+<li><strong>Password Hashing</strong>: In the context of password storage, when a user creates an account or changes their password, the password is run through a hash function, and the resulting hash is stored in the database. The original password is not stored.</li>
+<li><strong>Verification</strong>: When the user logs in, the password they provide is hashed again, and the resulting hash is compared with the stored hash in the database. If the hashes match, the password is correct.</li>
+<li><strong>Salting</strong>: To prevent attacks using precomputed tables of hashes (rainbow tables), a random value called a &#x27;salt&#x27; is often added to the password before hashing. The salt is stored alongside the hash in the database. This means that even if two users have the same password, their hashes will be different due to the unique salts.</li>
+<li><strong>Peppering</strong>: In addition to salting, peppering involves adding a secret value before hashing. The &#x27;pepper&#x27; is not stored in the database, adding another layer of security if the database is compromised.</li>
+<li><strong>Multiple Rounds of Hashing</strong>: To increase the computational cost of generating hashes (and thus slow down attackers), many systems apply the hash function multiple times in what&#x27;s known as key stretching.</li>
+<li><strong>Modern Hashing Algorithms</strong>: Algorithms like bcrypt, scrypt, or Argon2 are designed for password hashing and include built-in salting and key stretching.</li>
+</ol>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d5---security-operations/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">D​5 Security Operations</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d5---security-operations/5.2-understand-system-hardening/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">5.​2 Configuration Management Overview</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Made with &lt;3 © Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "5.1 Data Handling", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+
+    <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+            window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.docs-powered-by');
+            elements.forEach(el => el.remove());
+    </script>
+
+</body>
+</html>

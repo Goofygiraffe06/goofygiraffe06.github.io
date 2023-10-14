@@ -9,29 +9,32 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Categories</title>
-    <meta name="title" content="Categories">
+    <title>2.1 Understand Incident Report</title>
+    <meta name="title" content="2.1 Understand Incident Report">
+    <meta name="description" content="It is planning an likely incident which may cause disruption to an organization business.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://goofygiraffe06.github.io/categories/">
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.1-understand-incident-report/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="og:title" content="Categories">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.1-understand-incident-report/">
+    <meta property="og:title" content="2.1 Understand Incident Report">
+    <meta property="og:description" content="It is planning an likely incident which may cause disruption to an organization business.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="twitter:title" content="Categories">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.1-understand-incident-report/">
+    <meta property="twitter:title" content="2.1 Understand Incident Report">
+    <meta property="twitter:description" content="It is planning an likely incident which may cause disruption to an organization business.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +49,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
                     </div>
@@ -146,18 +149,185 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="categories" class="break-words">
+<doc-anchor-target id="21-understand-incident-report" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#categories">#</doc-anchor-trigger>
-        <span>Categories</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#21-understand-incident-report">#</doc-anchor-trigger>
+        <span>2.1 Understand Incident Report</span>
     </h1>
 </doc-anchor-target>
-<ul style="padding-left: 0px;">
-<li class="relative block py-1">
-<a href="cloud/">Cloud</a>
+<p>It is planning an likely incident which may cause disruption to an organization business.</p>
+<doc-anchor-target id="terminologies">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#terminologies">#</doc-anchor-trigger>
+        <span>Terminologies</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="breach">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#breach">#</doc-anchor-trigger>
+        <span>Breach</span>
+    </h3>
+</doc-anchor-target>
+<p>The loss of control, compromise, unauthorized disclosure, unauthorized acquisition, or any similar occurrence where: a person other than an authorized user accesses or potentially accesses personally identifiable information; or an authorized user accesses personally identifiable information for other than an authorized purpose.</p>
+<doc-anchor-target id="event">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#event">#</doc-anchor-trigger>
+        <span>Event</span>
+    </h3>
+</doc-anchor-target>
+<p>Any observable occurrence in a network or a system.</p>
+<doc-anchor-target id="exploit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exploit">#</doc-anchor-trigger>
+        <span>Exploit</span>
+    </h3>
+</doc-anchor-target>
+<p>A particular attack. It is named this way because these attacks exploit system vulnerabilities.</p>
+<doc-anchor-target id="incident">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#incident">#</doc-anchor-trigger>
+        <span>Incident</span>
+    </h3>
+</doc-anchor-target>
+<p>An event that actually or potentially jeopardizes the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.</p>
+<doc-anchor-target id="intrusion">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intrusion">#</doc-anchor-trigger>
+        <span>Intrusion</span>
+    </h3>
+</doc-anchor-target>
+<p>A security event, or combination of events, that constitutes a deliberate security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization.</p>
+<doc-anchor-target id="threat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#threat">#</doc-anchor-trigger>
+        <span>Threat</span>
+    </h3>
+</doc-anchor-target>
+<p>Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service.</p>
+<doc-anchor-target id="vulnerability">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vulnerability">#</doc-anchor-trigger>
+        <span>Vulnerability</span>
+    </h3>
+</doc-anchor-target>
+<p>Weakness in an information system , system security procedures, internal controls or implementation that could be exploited by a threat source.</p>
+<doc-anchor-target id="zero-day">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#zero-day">#</doc-anchor-trigger>
+        <span>Zero Day</span>
+    </h3>
+</doc-anchor-target>
+<p>A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.</p>
+<doc-anchor-target id="211-purpose">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#211-purpose">#</doc-anchor-trigger>
+        <span>2.1.1 Purpose</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The priority of any incident response is to <strong>protect life, health and safety</strong>. When any decision related to priorities is to be made, <strong>always choose safety first</strong>.</li>
+<li>The primary goal of incident management is to be prepared.</li>
+<li>An event is any measurable occurrence, and most events are harmless. However, if the event has the potential to disrupt the business’s mission, then it is called an incident.</li>
+</ul>
+<doc-anchor-target id="222-importance">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#222-importance">#</doc-anchor-trigger>
+        <span>2.2.2 Importance</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>It  is important because it helps preserve business viability and survival.</li>
+<li>It is aimed at reducing the impact of an incident so the organization can resume its operations as soon as possible.</li>
+</ul>
+<doc-anchor-target id="223-components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#223-components">#</doc-anchor-trigger>
+        <span>2.2.3 Components</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>An incident response policy should reference an incident response plan that employees follow, depending on the role in the organization.</li>
+<li>It contain several procedures and standards related to incident response.</li>
+<li>Procedures to implement the plan should define the technical processes, techniques, checklists and other tools that teams will use when responding to an incident.</li>
+</ul>
+<doc-anchor-target id="preparation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#preparation">#</doc-anchor-trigger>
+        <span>Preparation</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Develop a policy approved by management.</li>
+<li>Identify critical data and systems, single points of failure.</li>
+<li>Train staff on incident response.</li>
+<li>Implement an incident response team. (covered in subsequent topic)</li>
+<li>Practice Incident Identification. (First Response)</li>
+<li>Identify Roles and Responsibilities.</li>
+<li>Plan the coordination of communication between stakeholders.</li>
+<li>Consider the possibility that a primary method of communication may not be available.</li>
+</ul>
+<doc-anchor-target id="detection-and-analysis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#detection-and-analysis">#</doc-anchor-trigger>
+        <span>Detection and Analysis</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Monitor all possible attack vectors.</li>
+<li>Analyze incident using known data and threat intelligence.</li>
+<li>Prioritize incident response.</li>
+<li>Standardize incident documentation</li>
+</ul>
+<doc-anchor-target id="containment">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#containment">#</doc-anchor-trigger>
+        <span>Containment</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Gather evidence.</li>
+<li>Choose an appropriate containment strategy.</li>
+<li>Identify the attacker.</li>
+<li>Isolate the attack.</li>
+</ul>
+<doc-anchor-target id="post-incident-activity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#post-incident-activity">#</doc-anchor-trigger>
+        <span>Post-Incident Activity</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Identify evidence that may need to be retained.</li>
+<li>Document lessons learned.</li>
+</ul>
+<doc-anchor-target id="incident-response-team">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#incident-response-team">#</doc-anchor-trigger>
+        <span>Incident Response Team</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Organization establish security operating center with incident report team.</li>
+<li>A typical incident response team is a cross-functional group of individuals who represent the management, technical and functional areas of responsibility most directly impacted by a security incident.</li>
+<li>Potential team members include the following:
+<ul>
+<li>Representative(s) of senior management</li>
+<li>Information security professionals</li>
+<li>Legal representatives</li>
+<li>Public affairs/communications representatives</li>
+<li>Engineering representatives (system and network)</li>
+</ul>
 </li>
-<li class="relative block py-1">
-<a href="ctf-writeups/">CTF Writeups</a>
+<li>They assist with investigating the incident, assessing the damage, collecting evidence, reporting the incident and initiating recovery procedures.</li>
+<li>They also participate in the remediation and lessons learned stages and help with root cause analysis.</li>
+<li>These teams are commonly known as computer incident response teams (CIRTs) or computer security incident response teams (CSIRTs).</li>
+<li>Primary responsibilities of an SOC:
+<ul>
+<li>Determine the amount and scope of damage caused by the incident.</li>
+<li>Determine whether any confidential information was compromised during the incident.</li>
+<li>Implement any necessary recovery procedures to restore security and recover from incident-related damage.</li>
+<li>Supervise the implementation of any additional security measures necessary to improve security and prevent recurrence of the incident.</li>
+</ul>
 </li>
 </ul>
 
@@ -167,6 +337,27 @@
                             </div>
                             <footer class="clear-both">
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">D​2 Incident Response, Business Continuity and Disaster Recovery Concepts</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.2-understand-business-continuity/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">2.​2 Understand Business Continuity</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -205,7 +396,7 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Categories", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "2.1 Understand Incident Report", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>

@@ -9,29 +9,34 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Categories</title>
-    <meta name="title" content="Categories">
+    <title>1.3 Understand Security Controls</title>
+    <meta name="title" content="1.3 Understand Security Controls">
+    <meta name="description" content="Security controls pertain to the physical, technical and administrative mechanisms that act as safeguards or countermeasures">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://goofygiraffe06.github.io/categories/">
+    <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d1---security-principles/1.3-understand-security-controls/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="og:title" content="Categories">
+    <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d1---security-principles/1.3-understand-security-controls/">
+    <meta property="og:title" content="1.3 Understand Security Controls">
+    <meta property="og:description" content="Security controls pertain to the physical, technical and administrative mechanisms that act as safeguards or countermeasures">
+    <meta property="og:image" content="https://goofygiraffe06.github.io/static/pasted_image_20230504091314.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://goofygiraffe06.github.io/categories/">
-    <meta property="twitter:title" content="Categories">
+    <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d1---security-principles/1.3-understand-security-controls/">
+    <meta property="twitter:title" content="1.3 Understand Security Controls">
+    <meta property="twitter:description" content="Security controls pertain to the physical, technical and administrative mechanisms that act as safeguards or countermeasures">
+    <meta property="twitter:image" content="https://goofygiraffe06.github.io/static/pasted_image_20230504091314.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750603237826" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750603237826" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -46,7 +51,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Goofygiraffe06&#x27;s Blog</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Hack The Planet</span>
                     </div>
@@ -146,19 +151,65 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="categories" class="break-words">
+<doc-anchor-target id="13-understand-security-controls" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#categories">#</doc-anchor-trigger>
-        <span>Categories</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#13-understand-security-controls">#</doc-anchor-trigger>
+        <span>1.3 Understand Security Controls</span>
     </h1>
 </doc-anchor-target>
-<ul style="padding-left: 0px;">
-<li class="relative block py-1">
-<a href="cloud/">Cloud</a>
-</li>
-<li class="relative block py-1">
-<a href="ctf-writeups/">CTF Writeups</a>
-</li>
+<doc-anchor-target id="security-control">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-control">#</doc-anchor-trigger>
+        <span>Security Control</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Security controls pertain to the physical, technical and administrative mechanisms that act as <strong>safeguards or countermeasures</strong> prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information.</li>
+<li>The implementation of controls should reduce risk, hopefully <strong>to an acceptable level</strong>.</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../../../static/pasted_image_20230504091314.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="131-administrative-controls">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#131-administrative-controls">#</doc-anchor-trigger>
+        <span>1.3.1 Administrative Controls</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>It is also known as managerial controls.</li>
+<li>These controls are <strong>directives, guidelines or advisories</strong> aimed at the people within the organization.</li>
+<li>They provide <strong>frameworks, constraints and standards</strong> for human behavior, and should cover the entire scope of the organization’s activities and its interactions with external parties and stakeholders.</li>
+<li>Administrative controls can and should be powerful, effective tools for achieving information security.</li>
+<li>These and other techniques bring the policies to a more neutral level and away from the decision-making of only the senior executives.</li>
+<li>It also makes them immediate, useful and operational on a daily and per-task basis.</li>
+</ul>
+<doc-anchor-target id="132-technical-controls">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#132-technical-controls">#</doc-anchor-trigger>
+        <span>1.3.2 Technical Controls</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>It is also known as logical controls.</li>
+<li>They are security controls that computer systems and networks directly implement.</li>
+<li>These controls can provide <strong>automated protection again unauthorized access</strong> or misuse or any other threat and support security requirements for application and data.</li>
+<li>They can be configuration settings or parameters of data, or they can be hardware setting/protection like switches etc.</li>
+<li>The implementation of technical controls always requires significant operational considerations and should be consistent with the management of security within the organization.</li>
+</ul>
+<doc-anchor-target id="133-physical-controls">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#133-physical-controls">#</doc-anchor-trigger>
+        <span>1.3.3 Physical Controls</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>They follow process based security needs using physical devices like badge reader, architectural features etc.</li>
+<li>They provide ways to <strong>control and direct movement of people</strong> and equipment from physical location.</li>
+<li>Physical controls also provide protection and control over entry onto the land surrounding the buildings, parking lots or other areas that are within the organization’s control.</li>
+<li>Physical controls are <strong>supported by technical controls</strong> as a means of incorporating them into an overall security system.</li>
 </ul>
 
                                 
@@ -167,6 +218,27 @@
                             </div>
                             <footer class="clear-both">
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d1---security-principles/1.2-understand-the-risk-management-process/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">1.​2 Understand The Risk Management Process</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../isc2-cc-notes/d1---security-principles/1.4-understand-governance-elements-and-processes/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">1.​4 Understand Governance Elements and Processes</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -205,7 +277,7 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Categories", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "1.3 Understand Security Controls", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
