@@ -1,4 +1,8 @@
-## Modules
+---
+date: 2023-10-15
+categories: Notes
+author: Rahul N.
+---
 
 [1.1 Understand the Security Concepts of Information Assurance](/isc2-cc-notes/d1---security-principles/1.1-understand-the-security-concepts-of-information-assurance/)
 
@@ -13,4 +17,3 @@
 [Summary](/isc2-cc-notes/d1---security-principles/summary/)
 
 [Terminologies](/isc2-cc-notes/d1---security-principles/terminologies/)
-

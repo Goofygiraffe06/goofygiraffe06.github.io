@@ -1,4 +1,9 @@
--------------------------------------------------------------------------------
+---
+date: 2023-10-15
+categories: Notes
+author: Rahul N.
+---
+
 - **Adequate Security** - Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. Source: OMB Circular A-130
 -------------------------------------------------------------------------------
 - **Administrative Controls -** Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction with physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager.

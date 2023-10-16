@@ -1,4 +1,8 @@
-# D5 Security Operations
+---
+date: 2023-10-15
+categories: Notes
+author: Rahul N.
+---
 
 # Modules
 
@@ -9,4 +13,3 @@
 [5.3 Understand Best Practice Security Policies](/isc2-cc-notes/d5---security-operations/5.3-understand-best-practice-security-policies/)
   
 [5.4 Understand Security Awareness Training](/isc2-cc-notes/d5---security-operations/5.4-understand-security-awareness-training/)
-

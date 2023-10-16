@@ -1,3 +1,8 @@
+---
+date: 2023-10-15
+categories: Notes
+author: Rahul N.
+---
 
 ## Modules
 
@@ -10,4 +15,3 @@
 [Summary](/isc2-cc-notes/d3---access-control-concepts/summary/)
 
 [Terminologies](/isc2-cc-notes/d3---access-control-concepts/terminologies/)
-
