@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751012914180">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.751813428786">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>D2 Incident Response, Business Continuity and Disaster Recovery Concepts</title>
     <meta name="title" content="D2 Incident Response, Business Continuity and Disaster Recovery Concepts">
-    <meta name="description" content="date: 2023-10-15 categories: Notes author: Rahul N.---## Modules">
+    <meta name="description" content="2.1 Understand Incident Report">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/">
     <meta property="og:title" content="D2 Incident Response, Business Continuity and Disaster Recovery Concepts">
-    <meta property="og:description" content="date: 2023-10-15 categories: Notes author: Rahul N.---## Modules">
+    <meta property="og:description" content="2.1 Understand Incident Report">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://goofygiraffe06.github.io/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/">
     <meta property="twitter:title" content="D2 Incident Response, Business Continuity and Disaster Recovery Concepts">
-    <meta property="twitter:description" content="date: 2023-10-15 categories: Notes author: Rahul N.---## Modules">
+    <meta property="twitter:description" content="2.1 Understand Incident Report">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.751012914180" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.751813428786" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751012914180" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.751813428786" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751012914180" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.751813428786" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -155,11 +155,29 @@
         <span>D2 Incident Response, Business Continuity and Disaster Recovery Concepts</span>
     </h1>
 </doc-anchor-target>
-<hr>
-<p>date: 2023-10-15
-categories: Notes
-author: Rahul N.
----## Modules</p>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <svg width="2rem" height="2rem" xmlns="http://www.w3.org/2000/svg" fill="white"><g><rect width="2rem" height="1.7rem" fill="#c5c5c5"/><circle r="0.44rem" cy="0.83rem" cx="1rem"/><ellipse ry="0.96rem" rx="0.77rem" cy="2.15rem" cx="1rem"/></g></svg>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">Rahul N.</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div>In&nbsp;</div>
+    <div><a href="../../categories/notes/">Notes</a></div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2023-10-15</span></div>
+</div>
+
+<doc-anchor-target id="modules">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modules">#</doc-anchor-trigger>
+        <span>Modules</span>
+    </h2>
+</doc-anchor-target>
 <p><a href="/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.1-understand-incident-report/">2.1 Understand Incident Report</a></p>
 <p><a href="/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.2-understand-business-continuity/">2.2 Understand Business Continuity</a></p>
 <p><a href="/isc2-cc-notes/d2---incident-response-business-continuity-and-disaster-recovery-concepts/2.3-understand-disaster-recovery/">2.3 Understand Disaster Recovery</a></p>
@@ -235,11 +253,6 @@ author: Rahul N.
 
     <script data-goatcounter="https://giraffeblog.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
-
-    window.addEventListener('load', function() {
-        const elements = document.querySelectorAll('.docs-powered-by');
-        elements.forEach(el => el.remove());
-    });
 
 
 </body>
