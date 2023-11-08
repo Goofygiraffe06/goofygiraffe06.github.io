@@ -4,7 +4,7 @@ categories: Notes
 author: Rahul N.
 ---
 
-# Modules
+# Security Operations
 
 [5.1 Understand Data Security](/isc2-cc-notes/d5---security-operations/5.1-understand-data-security/)
   
