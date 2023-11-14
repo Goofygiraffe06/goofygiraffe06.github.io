@@ -4,5 +4,11 @@ url: goofygiraffe06.github.io
 branding:
   title: Goofygiraffe06's Blog
   label: Hack The Planet
+links:
+  - text: Categories
+    link: /categories
+  - text: About Me
+    link: /
+
 footer:
   copyright: "Made with <3 &copy; Copyright {{ year }}. All rights reserved."
