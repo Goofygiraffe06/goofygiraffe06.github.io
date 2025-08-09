@@ -50,3 +50,21 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Responsive navbar styles */
+@media (max-width: 600px) {
+  #navbar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  #navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 0.5rem;
+  }
+  #navbar li {
+    margin: 0.25rem;
+  }
+}
