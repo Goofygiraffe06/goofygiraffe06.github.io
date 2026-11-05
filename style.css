@@ -1,32 +1,3 @@
-/* Navbar styles */
-#navbar {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  padding: 0.25rem 0;
-  position: fixed;
-  top: 1rem;
-  right: 0;
-  width: auto;
-}
-#navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-#navbar li {
-  margin: 0 1.5rem 0 0;
-}
-#navbar a {
-  text-decoration: none;
-  margin-right: 1rem;
-}
 body {
   font-family: system-ui, sans-serif;
   max-width: 600px;
@@ -49,22 +20,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Responsive navbar styles */
-@media (max-width: 600px) {
-  #navbar {
-    position: relative;
-    top: 0;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-  #navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 0.5rem;
-  }
-  #navbar li {
-    margin: 0.25rem;
-  }
 }
